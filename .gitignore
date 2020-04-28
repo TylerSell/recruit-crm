@@ -37,4 +37,5 @@ yarn-debug.log*
 
 # Ignore notes files
 notes.md 
+notes2.md
 og-specs.md 
