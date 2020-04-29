@@ -19,8 +19,6 @@ class CreateCandidates < ActiveRecord::Migration[6.0]
       t.boolean :voucher_sent, :default => false
       t.boolean :test_passed, :default => false
       t.boolean :licensed, :default => false
-      t.integer :agent_ids
-      t.integer :recruiter_id
       t.belongs_to :agent, foreign_key: true
       t.belongs_to :recruiter, foreign_key: true
 
