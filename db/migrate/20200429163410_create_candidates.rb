@@ -14,13 +14,15 @@ class CreateCandidates < ActiveRecord::Migration[6.0]
       t.string :interview_date
       t.string :test_date
       t.string :stage
-      t.boolean :affidavit_sent
-      t.boolean :affidavit_received
-      t.boolean :voucher_sent
-      t.boolean :test_passed
-      t.boolean :licensed
-      t.integer :agent_id
-      t.integer :recruiter_id
+      t.boolean :affidavit_sent, :default => false
+      t.boolean :affidavit_received, :default => false
+      t.boolean :voucher_sent, :default => false
+      t.boolean :test_passed, :default => false
+      t.boolean :licensed, :default => false
+      t.integer :agent_id, :null => false
+      t.integer :recruiter_id, :null => false
+      t.belongs_to :agent, foreign_key: true
+      t.belongs_to :recruiter, foreign_key: true
 
       t.timestamps
     end
