@@ -15,7 +15,7 @@ class User::AgentsController < ApplicationController
 
         if @agent.save 
             session[:user_id] = @agent.id 
-            redirect_to user_agents_path(@agent)
+            redirect_to user_agent_path(@agent)
         else 
             render 'agent/new'
         end
@@ -29,6 +29,8 @@ class User::AgentsController < ApplicationController
     end 
 
     def update
+        @agent.update(agent_params)
+        redirect_to user_agents_path(@agent)
     end 
 
 # --------------------------PRIVATE METHODS---------------------------------------
