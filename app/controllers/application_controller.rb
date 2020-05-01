@@ -1,13 +1,13 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     before_action :redirect_if_not_authenticated 
-    helper_methods :current_user, :agent, :user_authenticated
+    helper_methods :current_user, :is_agent?, :user_authenticated
 
     # ----------------------PRIVATE METHODS BELOW----------------------------------
 
     private 
 
-    def agent 
+    def is_agent? 
         current_user.type == "Agent" ? true : false
     end 
 
