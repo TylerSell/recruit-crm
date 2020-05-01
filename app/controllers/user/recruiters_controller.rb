@@ -1,5 +1,6 @@
 class User::RecruitersController < ApplicationController
     before_action :find_recruiter, only: [:index, :show, :edit, :update]
+    skip_before_action :redirect_if_not_authenticated, only: [:new, :create]
     
     def index
         @candidates = @recruiter.candidates

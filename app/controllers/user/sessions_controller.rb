@@ -1,4 +1,5 @@
 class User::SessionsController < ApplicationController
+    skip_before_action :redirect_if_not_authenticated, only: [:new, :create]
 
     def new
         @user = User.new 
