@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
     protect_from_forgery with: :exception
     before_action :redirect_if_not_authenticated 
-    helper_methods :current_user, :is_agent?, :user_authenticated
+    helper_method :current_user, :is_agent?, :user_authenticated
 
     # ----------------------PRIVATE METHODS BELOW----------------------------------
 

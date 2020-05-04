@@ -2,9 +2,15 @@ class CandidatesController < ApplicationController
     before action :find_candidate, only: [:show, :edit, :update]
 
     def index 
-        @candidates = Candidate.all 
-    end 
-
+        if is_agent? 
+            @agent = Agent.find_by(id: session[:user_id])
+            @candidates = @agent.candidates 
+        else 
+            @recruiter = Recruiter.find_by(id: session[:user_id])
+            @candidates = @recruiter.candidates
+        end 
+    end
+    
     def new 
         @candidate = Candidate.new 
     end 
@@ -29,6 +35,10 @@ class CandidatesController < ApplicationController
         @candidate.update(candidate_params)
         redirect_to candidate_path(@candidate)
     end 
+
+    def destroy
+        @candidate.delete
+        redirect_to 
 
 
     # --------------------------------PRIVATE METHODS BELOW-----------------------------------
