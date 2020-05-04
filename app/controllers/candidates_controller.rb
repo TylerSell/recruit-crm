@@ -1,6 +1,5 @@
 class CandidatesController < ApplicationController
     before action :find_candidate, only: [:show, :edit, :update]
-    before_create :set_default_agent_or_recruiter
 
     def index 
         @candidates = Candidate.all 
@@ -43,13 +42,5 @@ class CandidatesController < ApplicationController
     def candidate_params
         params.require(:candidate).permit(:first_name, :last_name, :email, :phone_number, :address_1, :address_2, :city, :state, :zip_code, :date_of_birth, :interview_date, :test_date, :stage, :affidavit_sent, :affidavit_received, :voucher_sent, :test_passed, :licensed, :agent_id, :recruiter_id)
     end 
-
-    def set_default_agent_or_recruiter
-        if is_agent?
-            @recruiter = Recruiter.find_by(id: '2') 
-        else 
-            @agent = Agent.find_by(id: '1')
-        end
-    end
 
 end
