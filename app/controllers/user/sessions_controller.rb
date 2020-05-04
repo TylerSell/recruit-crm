@@ -10,10 +10,10 @@ class User::SessionsController < ApplicationController
 
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id 
-            if agent 
-                redirect_to user_agents_path(@user)
+            if is_agent?
+                redirect_to agent_path(@user)
             else 
-                redirect_to user_recruiters_path(@user)
+                redirect_to recruiter_path(@user)
             end 
         else 
             redirect_to root_path

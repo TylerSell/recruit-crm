@@ -7,9 +7,13 @@ Rails.application.routes.draw do
 
   get '/logout', to: 'user/sessions#destroy'
 
-  namespace :user do 
+  # namespace :user do 
+  #   resources :agents, :recruiters, only: [:index, :new, :create, :show, :edit, :update]
+  # end
+
+  scope '/user' do 
     resources :agents, :recruiters, only: [:index, :new, :create, :show, :edit, :update]
-  end
+  end 
 
   resources :candidates, only: [:new, :create, :show, :edit, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html

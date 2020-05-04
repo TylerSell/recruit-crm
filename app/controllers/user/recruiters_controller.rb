@@ -15,9 +15,9 @@ class User::RecruitersController < ApplicationController
 
         if @recruiter.save 
             session[:user_id] = @recruiter.id 
-            redirect_to user_recruiter_path(@recruiter)
+            redirect_to recruiter_path(@recruiter)
         else 
-            render 'recruiter/new'
+            render 'user/recruiters/new'
         end
 
     end 
@@ -30,7 +30,7 @@ class User::RecruitersController < ApplicationController
 
     def update
         @recruiter.update(recruiter_params)
-        redirect_to user_recruiters_path(@recruiter)
+        redirect_to recruiter_path(@recruiter)
     end 
 
 # --------------------------PRIVATE METHODS---------------------------------------

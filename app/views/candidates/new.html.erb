@@ -1,0 +1,8 @@
+<%# form for candidate %>
+if is_agent?
+    hidden_field :agent_id = session[:user_id]
+    select_tag :recruiter_id
+else
+    hidden_field :recruiter_id = session[:user_id]
+    select_tag :agent_id
+end
