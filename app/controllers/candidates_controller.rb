@@ -26,6 +26,8 @@ class CandidatesController < ApplicationController
     end 
 
     def show 
+        @agent = Agent.find_by(id: @candidate.agent_id)
+        @recruiter = Recruiter.find_by(id: @candidate.recruiter_id)
     end 
 
     def edit 

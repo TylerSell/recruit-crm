@@ -1,0 +1,47 @@
+<h1><%= @candidate.first_name %> <%= @candidate.last_name %></h1>
+<h3><%= @candidate.email %></h3>
+<h3><%= @candidate.phone_number %></h3>
+<h3><%= @candidate.address_1 %></h3>
+<h3><%= @candidate.address_2 if @candidate.address_2 %></h3>
+<h3><%= @candidate.city %></h3>
+<h3><%= @candidate.state %></h3>
+<h3><%= @candidate.zip_code %></h3>
+<h3><%= @candidate.date_of_birth%></h3>
+<h3><%= @candidate.inteview_date %></h3>
+<h3><%= @candidate.test_date %></h3>
+<h3><%= @candidate.stage %></h3>
+<% if @candidate.affidavit_sent %>
+    <h3>Affidavit Sent</h3>
+<% else %>
+    <h3>Affidavit Not Sent</h3>
+<% end %>
+<% if @candidate.affidavit_received %>
+    <h3>Affidavit Received</h3>
+<% else %>
+    <h3>Affidavit Not Received</h3>
+<% end %>
+<% if @candidate.voucher_sent %>
+    <h3>Voucher Sent</h3>
+<% else %>
+    <h3>Voucher Not Sent</h3>
+<% end %>
+<% if @candidate.test_passed %>
+    <h3>Test Passed</h3>
+<% else %>
+    <h3>Test Not Passed</h3>
+<% end %>
+<% if @candidate.licensed %>
+    <h3>Licensed</h3>
+<% else %>
+    <h3>Not Licensed</h3>
+<% end %>
+<% if @candidate.agent_id != 1 %>
+    <h3><%= @agent.full_name %></h3>
+<% else %>
+    <h3>No Agent Assigned Yet</h3>
+<% end %>
+<% if @candidate.recruiter_id != 2 %>
+    <h3><%= @recruiter.full_name %></h3>
+<% else %>
+    <h3>No Recruiter Assigned Yet</h3>
+<% end %>
