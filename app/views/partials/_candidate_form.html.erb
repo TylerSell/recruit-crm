@@ -1,0 +1,49 @@
+<%= form_for @candidate do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %><br><br>
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %><br><br>
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number %><br><br>
+    <%= f.label :email %>
+    <%= f.text_field :email %><br><br>
+    <%= f.label :address_1 %>
+    <%= f.text_field :address_1 %><br><br>
+    <%= f.label :address_2 %>
+    <%= f.text_field :address_2 %><br><br>
+    <%= f.label :city %>
+    <%= f.text_field :city %><br><br>
+    <%= f.label :state %>
+    <%= f.text_field :state %><br><br>
+    <%= f.label :zip_code %>
+    <%= f.text_field :zip_code %><br><br>
+    <%= f.label :date_of_birth %>
+    <%= f.text_field :date_of_birth %><br><br>
+    <%= f.label :interview_date %>
+    <%= f.text_field :interview_date %><br><br>
+    <%= f.label :test_date %>
+    <%= f.text_field :test_date %><br><br>
+    <%= f.label :stage %>
+    <%= f.text_field :stage %><br><br>
+    <%= f.label :affidavit_sent %>
+    <%= f.select :affidavit_sent, [['Not Sent', false], ['Sent', true]] %><br><br>
+    <%= f.label :affidavit_received %>
+    <%= f.select :affidavit_received, [['Not Received', false], ['Received', true]]  %><br><br>
+    <%= f.label :voucher_sent %>
+    <%= f.select :voucher_sent, [['Not Sent', false], ['Sent', true]]  %><br><br>
+    <%= f.label :test_passed %>
+    <%= f.select :test_passed, [['Not Passed', false], ['Passed', true]]  %><br><br>
+    <%= f.label :licensed %>
+    <%= f.select :licensed, [['Not Licensed', false], ['Licensed', true]]  %><br><br>
+    <% if is_agent? %>
+        <%= f.hidden :agent_id, value: current_user.id %>
+        <%= f.label :recruiter_id %>
+        <%= f.collection_select :recruiter_id, Recruiter.all, :id, :full_name %><br><br>
+    <% else %>
+        <%= f.hidden :recruiter_id, value: current_user.id %>
+        <%= f.label :agent_id %>
+        <%= f.collection_select :agent_id, Agent.all, :id, :full_name %><br><br>
+    <% end %>
+    
+    <%= f.submit %>
+<% end %> 
