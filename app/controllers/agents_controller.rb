@@ -4,7 +4,12 @@ class AgentsController < ApplicationController
 
     
     def index
-        @candidates = @agent.candidates
+        # @prospects = Candidate.all
+        # @prospects.each do |candidate|
+        #     if candidate.id == @agent.id 
+        #         @candidates << candidate 
+        #     end 
+        # end 
     end
     
     def new
@@ -39,11 +44,11 @@ class AgentsController < ApplicationController
     private 
 
     def agent_params 
-        pararms.require(:agent).permit(:first_name, :last_name, :phone_number, :email, :password)
+        params.require(:agent).permit(:first_name, :last_name, :phone_number, :email, :password)
     end 
 
     def find_agent
-        @agent = Agent.find_by(id: params[:id])
+        @agent = Agent.find_by(id: session[:user_id])
     end
 
 end

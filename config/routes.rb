@@ -12,7 +12,8 @@ Rails.application.routes.draw do
   # end
 
   scope '/user' do 
-    resources :agents, :recruiters, only: [:index, :new, :create, :show, :edit, :update]
+    resources :agents, only: [:index, :new, :create, :show, :edit, :update]
+    resources :recruiters, only: [:index, :new, :create, :show, :edit, :update]
   end 
 
   resources :candidates, only: [:new, :create, :show, :edit, :update, :destroy]

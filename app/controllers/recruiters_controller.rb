@@ -38,7 +38,7 @@ class RecruitersController < ApplicationController
     private 
 
     def recruiter_params 
-        pararms.require(:recruiter).permit(:first_name, :last_name, :phone_number, :email, :password)
+        params.require(:recruiter).permit(:first_name, :last_name, :phone_number, :email, :password)
     end 
 
     def find_recruiter
