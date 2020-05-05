@@ -4,12 +4,7 @@ class AgentsController < ApplicationController
 
     
     def index
-        # @prospects = Candidate.all
-        # @prospects.each do |candidate|
-        #     if candidate.id == @agent.id 
-        #         @candidates << candidate 
-        #     end 
-        # end 
+        @candidates = @agent.candidates
     end
     
     def new
@@ -48,7 +43,7 @@ class AgentsController < ApplicationController
     end 
 
     def find_agent
-        @agent = Agent.find_by(id: session[:user_id])
+        @agent = User.find_by(id: session[:user_id])
     end
 
 end

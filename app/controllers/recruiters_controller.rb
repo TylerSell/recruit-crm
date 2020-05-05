@@ -42,7 +42,7 @@ class RecruitersController < ApplicationController
     end 
 
     def find_recruiter
-        @recruiter = Recruiter.find_by(id: params[:id])
+        @recruiter = User.find_by(id: session[:user_id])
     end
 
 end
