@@ -1,0 +1,131 @@
+<h2>Dashboard</h2>
+
+<div>
+    <div>
+        <h3>Stage 1 - Interested</h3>
+    </div>
+    <% @candidates.interested.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 2 - Interview Set</h3>
+    </div>
+    <% @candidates.interveiw_set.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 3 - Affidavit Sent</h3>
+    </div>
+    <% @candidates.affitdavit_sent.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 4 - Voucher Sent for Study Course</h3>
+    </div>
+    <% @candidates.voucher_sent.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 5 - Studying For Test</h3>
+    </div>
+    <% @candidates.studying.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 6 - Test is Scheduled</h3>
+    </div>
+    <% @candidates.test_scheduled.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 7 - Sent to Contracting</h3>
+    </div>
+    <% @candidates.sent_to_contracting.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 8 - Hired</h3>
+    </div>
+    <% @candidates.hired.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 9 - Archived: Not Interested</h3>
+    </div>
+    <% @candidates.not_interested.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
+
+<div>
+    <div>
+        <h3>Stage 10 - No Contact</h3>
+    </div>
+    <% @candidates.no_contact.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.fullname %>
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+</div>
