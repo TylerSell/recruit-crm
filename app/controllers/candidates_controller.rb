@@ -1,16 +1,6 @@
 class CandidatesController < ApplicationController
     before action :find_candidate, only: [:show, :edit, :update]
 
-    def index 
-        if is_agent? 
-            @agent = Agent.find_by(id: session[:user_id])
-            @candidates = @agent.candidates 
-        else 
-            @recruiter = Recruiter.find_by(id: session[:user_id])
-            @candidates = @recruiter.candidates
-        end 
-    end
-    
     def new 
         @candidate = Candidate.new 
     end 
