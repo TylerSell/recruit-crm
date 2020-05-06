@@ -8,7 +8,7 @@
     <% @candidates.interested.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -21,7 +21,7 @@
     <% @candidates.interveiw_set.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -34,7 +34,7 @@
     <% @candidates.affitdavit_sent.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -47,7 +47,7 @@
     <% @candidates.voucher_sent.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -60,7 +60,7 @@
     <% @candidates.studying.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -73,7 +73,7 @@
     <% @candidates.test_scheduled.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -86,7 +86,7 @@
     <% @candidates.sent_to_contracting.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -99,7 +99,7 @@
     <% @candidates.hired.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -112,7 +112,7 @@
     <% @candidates.not_interested.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
@@ -125,7 +125,7 @@
     <% @candidates.no_contact.each do |candidate| %>
     <div>
         <p>
-            <%= candidate.fullname %>
+            <%= candidate.first_name %> <%= candidate.last_name %>
             <%= link_to "View", candidate_path(candidate) %>
         </p>
     </div>
