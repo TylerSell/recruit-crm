@@ -1,5 +1,5 @@
 class CandidatesController < ApplicationController
-    before action :find_candidate, only: [:show, :edit, :update]
+    # before action :find_candidate, only: [:show, :edit, :update]
 
     def new 
         @candidate = Candidate.new 

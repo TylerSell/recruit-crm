@@ -2,7 +2,15 @@ class User::SessionsController < ApplicationController
     skip_before_action :redirect_if_not_authenticated, only: [:new, :create]
 
     def new
-        @user = User.new 
+        if user_authenticated 
+            if is_agent?
+                redirect_to agent_path(session[:user_id])
+            else 
+                redirect_to recruiter_path(session[:user_id])
+            end
+        else
+            @user = User.new 
+        end
     end 
 
     def create 
@@ -11,9 +19,9 @@ class User::SessionsController < ApplicationController
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id 
             if is_agent?
-                redirect_to agent_path
+                redirect_to agent_path(@user.id)
             else 
-                redirect_to recruiter_path
+                redirect_to recruiter_path(@user.id)
             end 
         else 
             redirect_to root_path

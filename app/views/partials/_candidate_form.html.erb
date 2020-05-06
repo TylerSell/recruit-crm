@@ -36,13 +36,13 @@
     <%= f.label :licensed %>
     <%= f.select :licensed, [['Not Licensed', false], ['Licensed', true]]  %><br><br>
     <% if is_agent? %>
-        <%= f.hidden :agent_id, value: current_user.id %>
+        <%= f.hidden_field :agent_id, value: current_user.id %>
         <%= f.label :recruiter_id %>
-        <%= f.collection_select :recruiter_id, Recruiter.all, :id, :full_name %><br><br>
+        <%= f.select :recruiter_id, Recruiter.all.collect {|r| [r.first_name + ' ' + r.last_name, r.id]} %><br><br> 
     <% else %>
-        <%= f.hidden :recruiter_id, value: current_user.id %>
+        <%= f.hidden_field :recruiter_id, value: current_user.id %>
         <%= f.label :agent_id %>
-        <%= f.collection_select :agent_id, Agent.all, :id, :full_name %><br><br>
+        <%= f.select :agent_id, Agent.all.collect {|a| [a.first_name + ' ' + a.last_name, a.id]} %><br><br>
     <% end %>
     
     <%= f.submit %>
