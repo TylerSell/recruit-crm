@@ -2,5 +2,6 @@
 <h3><%= @agent.phone_number %></h3>
 <h3><%= @agent.email %></h3>
 
-<%= link_to "Edit", edit_agent_path(@agent) %>
-<%= link_to "Logout", logout_path %>
+<%= link_to "Edit", edit_agent_path(@agent) %><br><br>
+<%= link_to "Logout", logout_path %><br><br>
+<%= link_to "New Candidate", new_candidate_path %>

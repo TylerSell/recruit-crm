@@ -30,7 +30,12 @@ class CandidatesController < ApplicationController
 
     def destroy
         @candidate.delete
-        redirect_to 
+        if is_agent?
+            redirect_to agents_path
+        else 
+            redirect_to recruiters_path
+        end
+    end
 
 
     # --------------------------------PRIVATE METHODS BELOW-----------------------------------
