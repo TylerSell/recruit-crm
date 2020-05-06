@@ -15,7 +15,7 @@ class RecruitersController < ApplicationController
 
         if @recruiter.save 
             session[:user_id] = @recruiter.id 
-            redirect_to candidates_path 
+            redirect_to recruiter_path(@recruiter)
         else 
             render 'user/recruiters/new'
         end

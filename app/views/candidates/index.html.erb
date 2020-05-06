@@ -1,134 +1,264 @@
 <h1>Dashboard</h1>
 
-<!--
 <div>
     <div>
         <h3>Stage 1 - Interested</h3>
     </div>
-    <% @candidates.interested.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '1' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '1' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
         <h3>Stage 2 - Interview Set</h3>
     </div>
-    <% @candidates.interveiw_set.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '2' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '2' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
         <h3>Stage 3 - Affidavit Sent</h3>
     </div>
-    <% @candidates.affitdavit_sent.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '3' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '3' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
-        <h3>Stage 4 - Voucher Sent for Study Course</h3>
+        <h3>Stage 4 - Voucher Sent</h3>
     </div>
-    <% @candidates.voucher_sent.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '4' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '4' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
-        <h3>Stage 5 - Studying For Test</h3>
+        <h3>Stage 5 - Studying</h3>
     </div>
-    <% @candidates.studying.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '5' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '5' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
-        <h3>Stage 6 - Test is Scheduled</h3>
+        <h3>Stage 6 - Test Scheduled</h3>
     </div>
-    <% @candidates.test_scheduled.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '6' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '6' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
-        <h3>Stage 7 - Sent to Contracting</h3>
+        <h3>Stage 7 - Sent To Contracting</h3>
     </div>
-    <% @candidates.sent_to_contracting.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '7' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '7' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
         <h3>Stage 8 - Hired</h3>
     </div>
-    <% @candidates.hired.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '8' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '8' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
-        <h3>Stage 9 - Archived: Not Interested</h3>
+        <h3>Stage 9 - Archived/Not Interested</h3>
     </div>
-    <% @candidates.not_interested.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '9' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '9' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
 <div>
     <div>
-        <h3>Stage 10 - No Contact</h3>
+        <h3>Stage 10 - Archived/No Contact</h3>
     </div>
-    <% @candidates.no_contact.each do |candidate| %>
+
+    <% @candidates.each do |candidate| %>
     <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+        <% if is_agent? %>
+            <% if candidate.agent_id == session[:user_id] && candidate.stage == '10' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% else %>
+            <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '10' %>
+            <p>
+                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= link_to "View", candidate_path(candidate) %>
+            </p>
+            <% end %>
+        <% end %>
     </div>
+    <% end %>
 </div>
 
--->
+
+

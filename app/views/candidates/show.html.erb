@@ -36,14 +36,19 @@
     <h3>Not Licensed</h3>
 <% end %>
 <% if @candidate.agent_id != 1 %>
-    <h3><%= @agent.full_name %></h3>
+    <h3><%= @agent.first_name %> <%= @agent.last_name %></h3>
 <% else %>
     <h3>No Agent Assigned Yet</h3>
 <% end %>
 <% if @candidate.recruiter_id != 2 %>
-    <h3><%= @recruiter.full_name %></h3>
+    <h3><%= @recruiter.first_name %> <%= @recruiter.last_name %></h3>
 <% else %>
     <h3>No Recruiter Assigned Yet</h3>
 <% end %>
 
-<%= link_to "Edit Candidate", edit_candidate_path %>
+<%= link_to "Edit Candidate", edit_candidate_path %><br><br>
+
+<%= form_tag candidate_path(@candidate.id), method: "delete" do %>
+    <%= submit_tag "Delete #{@candidate.first_name} #{@candidate.last_name}" %>
+<% end %>
+

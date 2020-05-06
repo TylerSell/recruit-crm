@@ -1,25 +1,10 @@
 class CandidatesController < ApplicationController
     # EVEN THOUGH THIS IS A BEFORE ACTION EXCLUDING :NEW, :INDEX, :CREATE THE NEW PATH STILL HITS THIS LINE AND THROWS A WRONG NUMBER OF ARGS ERROR
     # before_action :find_candidate, only: [:edit, :show, :update]
+    helper_method :interested 
 
     def index
-        # candidates = Candidate.all 
-        
-        # if is_agent? 
-        #     candidates.each do |candidate|
-        #         if candidate.agent_id == session[:user_id]
-        #             @candidates ||= []
-        #             @candidates << candidate
-        #         end
-        #     end
-        # else 
-        #     candidates.each do |candidate|
-        #         if candidate.recruiter_id == session[:user_id]
-        #             @candidates ||= []
-        #             @candidates << candidate
-        #         end
-        #     end
-        # end
+        @candidates = Candidate.all 
     end
     
     def new 
@@ -53,12 +38,9 @@ class CandidatesController < ApplicationController
     end 
 
     def destroy
+        @candidate = Candidate.find_by(id: params[:id])
         @candidate.delete
-        if is_agent?
-            redirect_to agents_path
-        else 
-            redirect_to recruiters_path
-        end
+        redirect_to candidates_path
     end
 
 
@@ -74,5 +56,20 @@ class CandidatesController < ApplicationController
     def candidate_params
         params.require(:candidate).permit(:first_name, :last_name, :email, :phone_number, :address_1, :address_2, :city, :state, :zip_code, :date_of_birth, :interview_date, :test_date, :stage, :affidavit_sent, :affidavit_received, :voucher_sent, :test_passed, :licensed, :agent_id, :recruiter_id)
     end 
+
+    # def interested
+    #     @interested = Candidate.all.where(stage: '1')
+    # end
+
+    # scope :interested, -> { where(stage: '1')}
+    # scope :inteview_set, -> { where(stage: '2')}
+    # scope :affidavit_sent, -> { where(stage: '3')}
+    # scope :voucher_sent, -> { where(stage: '4')}
+    # scope :studying, -> { where(stage: '5')}
+    # scope :test_scheduled, -> { where(stage: '6')}
+    # scope :sent_to_contracting, -> { where(stage: '7')}
+    # scope :hired, -> { where(stage: '8')}
+    # scope :not_interested, -> { where(stage: '9')}
+    # scope :no_contact, -> { where(stage: '10')}
 
 end
