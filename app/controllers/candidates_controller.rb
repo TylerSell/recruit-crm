@@ -1,5 +1,6 @@
 class CandidatesController < ApplicationController
-    # before action :find_candidate, only: [:show, :edit, :update]
+    # EVEN THOUGH THIS IS A BEFORE ACTION EXCLUDING :NEW, :INDEX, :CREATE THE NEW PATH STILL HITS THIS LINE AND THROWS A WRONG NUMBER OF ARGS ERROR
+    # before_action :find_candidate, only: [:edit, :show, :update]
 
     def index
         candidates = Candidate.all 
@@ -7,12 +8,14 @@ class CandidatesController < ApplicationController
         if is_agent? 
             candidates.each do |candidate|
                 if candidate.agent_id == session[:user_id]
+                    @candidates ||= []
                     @candidates << candidate
                 end
             end
         else 
             candidates.each do |candidate|
                 if candidate.recruiter_id == session[:user_id]
+                    @candidates ||= []
                     @candidates << candidate
                 end
             end
@@ -63,9 +66,10 @@ class CandidatesController < ApplicationController
 
     private 
 
-    def find_candidate
-        @candidate = Candidate.find_by(id: params[:id])
-    end 
+    # FOR WHATEVER REASON ERROR CREATED WHEN HIT THE NEW PATH WITH A WRONG NUMBER OF ARGS ERROR
+    # def find_candidate
+    #     @candidate = Candidate.find_by(id: params[:id])
+    # end 
 
     def candidate_params
         params.require(:candidate).permit(:first_name, :last_name, :email, :phone_number, :address_1, :address_2, :city, :state, :zip_code, :date_of_birth, :interview_date, :test_date, :stage, :affidavit_sent, :affidavit_received, :voucher_sent, :test_passed, :licensed, :agent_id, :recruiter_id)
