@@ -1,6 +1,24 @@
 class CandidatesController < ApplicationController
     # before action :find_candidate, only: [:show, :edit, :update]
 
+    def index
+        candidates = Candidate.all 
+        
+        if is_agent? 
+            candidates.each do |candidate|
+                if candidate.agent_id == session[:user_id]
+                    @candidates << candidate
+                end
+            end
+        else 
+            candidates.each do |candidate|
+                if candidate.recruiter_id == session[:user_id]
+                    @candidates << candidate
+                end
+            end
+        end
+    end
+    
     def new 
         @candidate = Candidate.new 
     end 
