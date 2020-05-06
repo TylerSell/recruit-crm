@@ -12,10 +12,10 @@ Rails.application.routes.draw do
   # end
 
   scope '/user' do 
-    resources :agents, only: [:index, :new, :create, :show, :edit, :update]
-    resources :recruiters, only: [:index, :new, :create, :show, :edit, :update]
+    resources :agents, only: [:new, :create, :show, :edit, :update]
+    resources :recruiters, only: [:new, :create, :show, :edit, :update]
   end 
 
-  resources :candidates, only: [:new, :create, :show, :edit, :update, :destroy]
+  resources :candidates
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

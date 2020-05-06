@@ -4,11 +4,7 @@ class AgentsController < ApplicationController
     
     def new
         if user_authenticated 
-            if is_agent?
-                redirect_to agent_path(session[:user_id])
-            else 
-                redirect_to recruiter_path(session[:user_id])
-            end
+            redirect_to candidates_path 
         else
             @agent = Agent.new
         end

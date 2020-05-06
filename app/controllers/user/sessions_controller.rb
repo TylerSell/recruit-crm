@@ -3,11 +3,7 @@ class User::SessionsController < ApplicationController
 
     def new
         if user_authenticated 
-            if is_agent?
-                redirect_to agent_path(session[:user_id])
-            else 
-                redirect_to recruiter_path(session[:user_id])
-            end
+            redirect_to candidates_path 
         else
             @user = User.new 
         end
@@ -18,11 +14,7 @@ class User::SessionsController < ApplicationController
 
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id 
-            if is_agent?
-                redirect_to agent_path(@user.id)
-            else 
-                redirect_to recruiter_path(@user.id)
-            end 
+            redirect_to candidates_path 
         else 
             redirect_to root_path
         end 
