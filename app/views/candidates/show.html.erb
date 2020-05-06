@@ -7,7 +7,7 @@
 <h3><%= @candidate.state %></h3>
 <h3><%= @candidate.zip_code %></h3>
 <h3><%= @candidate.date_of_birth%></h3>
-<h3><%= @candidate.inteview_date %></h3>
+<h3><%= @candidate.interview_date %></h3>
 <h3><%= @candidate.test_date %></h3>
 <h3><%= @candidate.stage %></h3>
 <% if @candidate.affidavit_sent %>
@@ -45,3 +45,5 @@
 <% else %>
     <h3>No Recruiter Assigned Yet</h3>
 <% end %>
+
+<%= link_to "Edit Candidate", edit_candidate_path %>

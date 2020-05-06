@@ -8,7 +8,15 @@ class AgentsController < ApplicationController
     end
     
     def new
-        @agent = Agent.new
+        if user_authenticated 
+            if is_agent?
+                redirect_to agent_path(session[:user_id])
+            else 
+                redirect_to recruiter_path(session[:user_id])
+            end
+        else
+            @agent = Agent.new
+        end
     end 
 
     def create

@@ -16,14 +16,17 @@ class CandidatesController < ApplicationController
     end 
 
     def show 
+        @candidate = Candidate.find_by(id: params[:id])
         @agent = Agent.find_by(id: @candidate.agent_id)
         @recruiter = Recruiter.find_by(id: @candidate.recruiter_id)
     end 
 
     def edit 
+        @candidate = Candidate.find_by(id: params[:id])
     end 
 
     def update 
+        @candidate = Candidate.find_by(id: params[:id])
         @candidate.update(candidate_params)
         redirect_to candidate_path(@candidate)
     end 
