@@ -6,8 +6,8 @@
 <h3>City: <%= @candidate.city %></h3>
 <h3>State: <%= @candidate.state %></h3>
 <h3>Zip: <%= @candidate.zip_code %></h3>
-<h3>Date of Birth: <%= @candidate.date_of_birth if @candidate.date_of_birth %></h3>
-<h3>Interview Date: <%= @candidate.interview_date if @candidate.interview_date %></h3>
+<h3>Date of Birth: <%= @candidate.date_of_birth unless @candidate.date_of_birth == '' || ' ' %></h3>
+<h3>Interview Date: <%= @candidate.interview_date unless @candidate.interview_date == '' || ' ' %></h3>
 <h3>Stage: <%= @candidate.stage %></h3>
 <h3>Affidavit Status: 
     <% if @candidate.affidavit_received %>

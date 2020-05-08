@@ -6,13 +6,13 @@ class NewCreateCandidates < ActiveRecord::Migration[6.0]
       t.string :email
       t.string :phone_number
       t.string :address_1
-      t.string :address_2
+      t.string :address_2, :default => nil
       t.string :city
       t.string :state
       t.string :zip_code
-      t.string :date_of_birth
-      t.string :interview_date
-      t.string :test_date
+      t.string :date_of_birth, :default => nil
+      t.string :interview_date, :default => nil
+      t.string :test_date, :default => nil
       t.string :stage
       t.boolean :affidavit_sent, :default => false
       t.boolean :affidavit_received, :default => false
