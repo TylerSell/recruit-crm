@@ -2,36 +2,42 @@
 <h3>Email: <%= @candidate.email %></h3>
 <h3>Phone: <%= @candidate.phone_number %></h3>
 <h3>Address: <%= @candidate.address_1 %></h3>
-<h3>Address 2: <%= @candidate.address_2 if @candidate.address_2 %></h3>
+<% if !@candidate.address_2.empty? %>
+    <h3>Address 2: <%= @candidate.address_2 %></h3>
+<% end %>
 <h3>City: <%= @candidate.city %></h3>
 <h3>State: <%= @candidate.state %></h3>
 <h3>Zip: <%= @candidate.zip_code %></h3>
-<h3>Date of Birth: <%= @candidate.date_of_birth %></h3>
-<h3>Interview Date: <%= @candidate.interview_date %></h3>
+<% if !@candidate.date_of_birth.empty? %>
+    <h3>Date of Birth: <%= @candidate.date_of_birth %></h3>
+<% end %>
+<% if !@candidate.interview_date.empty? %>
+    <h3>Interview Date: <%= @candidate.interview_date %></h3>
+<% end %>
 <h3>Stage: <%= @candidate.stage %></h3>
 <h3>Affidavit Status: 
     <% if @candidate.affidavit_received %>
         Sent & Received
     <% elsif @candidate.affidavit_sent %>
-        Sent but have not received back yet.
+        Sent but Not Received
     <% else %>
-        Not sent yet.
+        Not Sent
     <% end %>
 </h3>
 <h3>Voucher Status: 
     <% if @candidate.voucher_sent %>
         Voucher Sent
     <% else %>
-        Not sent yet.
+        Not Sent
     <% end %>
 </h3>
 <h3>Test Status: 
     <% if @candidate.test_passed %>
         Test Passed
-    <% elsif @candidate.test_date %>
+    <% elsif !@candidate.test_date.empty? %>
         Test Scheduled on <%= @candidate.test_date %>
     <% else %>
-        Test Not Scheduled Yet
+        No Test Scheduled
     <% end %>
 </h3>
 <h3>License Status: 

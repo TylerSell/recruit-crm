@@ -10,14 +10,22 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '1' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <!-->
+                <%= form_for candidate do |f| %>
+                    <%= f.select :stage, options_for_select(stages, candidate.stage) %>
+                    <%= f.submit "Update" %>
+                <% end %>
+                -->
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '1' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -36,14 +44,18 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '2' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <strong>Interveiw Date: </strong><%= candidate.interview_date %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '2' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <strong>Interveiw Date: </strong><%= candidate.interview_date %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -62,14 +74,16 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '3' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '3' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -88,14 +102,16 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '4' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '4' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -114,14 +130,16 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '5' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '5' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -140,14 +158,18 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '6' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <strong>Test Date: </strong><%= candidate.test_date %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '6' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <strong>Test Date: </strong><%= candidate.test_date %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -166,14 +188,16 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '7' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '7' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -192,14 +216,16 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '8' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '8' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -218,14 +244,16 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '9' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '9' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
@@ -244,14 +272,16 @@
         <% if is_agent? %>
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '10' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
         <% else %>
             <% if candidate.recruiter_id == session[:user_id] && candidate.stage == '10' %>
             <p>
-                <%= candidate.first_name %> <%= candidate.last_name %>
+                <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp;
                 <%= link_to "View", candidate_path(candidate) %>
             </p>
             <% end %>
