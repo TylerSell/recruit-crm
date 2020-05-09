@@ -1,3 +1,6 @@
+<%= link_to "New Candidate", new_candidate_path %>
+
+
 <h1>Dashboard</h1>
 
 <div>
@@ -11,7 +14,7 @@
             <% if candidate.agent_id == session[:user_id] && candidate.stage == '1' %>
             <p>
                 <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                <!-->
+                <!--
                 <%= form_for candidate do |f| %>
                     <%= f.select :stage, options_for_select(stages, candidate.stage) %>
                     <%= f.submit "Update" %>

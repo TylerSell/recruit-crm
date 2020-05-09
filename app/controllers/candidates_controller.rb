@@ -33,8 +33,11 @@ class CandidatesController < ApplicationController
 
     def update 
         @candidate = Candidate.find_by(id: params[:id])
-        @candidate.update(candidate_params)
-        redirect_to candidate_path(@candidate)
+        if @candidate.update(candidate_params)
+            redirect_to candidate_path(@candidate)
+        else 
+            render :edit 
+        end
     end 
 
     def destroy
