@@ -4,7 +4,29 @@ class CandidatesController < ApplicationController
     helper_method :interested 
 
     def index
-        @candidates = Candidate.all 
+        if is_agent?
+            @candidates_1 = Candidate.agent(session[:user_id]).stage_1.order_by_modified
+            @candidates_2 = Candidate.agent(session[:user_id]).stage_2.order_by_interview
+            @candidates_3 = Candidate.agent(session[:user_id]).stage_3.order_by_modified
+            @candidates_4 = Candidate.agent(session[:user_id]).stage_4.order_by_modified
+            @candidates_5 = Candidate.agent(session[:user_id]).stage_5.order_by_modified
+            @candidates_6 = Candidate.agent(session[:user_id]).stage_6.order_by_test
+            @candidates_7 = Candidate.agent(session[:user_id]).stage_7.order_by_modified
+            @candidates_8 = Candidate.agent(session[:user_id]).stage_8.order_by_modified_desc
+            @candidates_9 = Candidate.agent(session[:user_id]).stage_9.order_by_modified_desc
+            @candidates_10 = Candidate.agent(session[:user_id]).stage_10.order_by_modified_desc
+        else 
+            @candidates_1 = Candidate.recruiter(session[:user_id]).stage_1
+            @candidates_2 = Candidate.recruiter(session[:user_id]).stage_2
+            @candidates_3 = Candidate.recruiter(session[:user_id]).stage_3
+            @candidates_4 = Candidate.recruiter(session[:user_id]).stage_4
+            @candidates_5 = Candidate.recruiter(session[:user_id]).stage_5
+            @candidates_6 = Candidate.recruiter(session[:user_id]).stage_6
+            @candidates_7 = Candidate.recruiter(session[:user_id]).stage_7
+            @candidates_8 = Candidate.recruiter(session[:user_id]).stage_8
+            @candidates_9 = Candidate.recruiter(session[:user_id]).stage_9
+            @candidates_10 = Candidate.recruiter(session[:user_id]).stage_10
+        end
     end
     
     def new 
