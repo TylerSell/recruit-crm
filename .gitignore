@@ -42,3 +42,9 @@ og-specs.md
 
 # Ignore envioronment files
 .env
+
+# Ignore localhost files
+localhost.crt 
+localhost.key 
+
+/.ssl
