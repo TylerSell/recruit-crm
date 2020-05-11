@@ -39,3 +39,6 @@ yarn-debug.log*
 notes.md 
 notes2.md
 og-specs.md 
+
+# Ignore envioronment files
+.env
