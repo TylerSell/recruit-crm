@@ -24,7 +24,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'omniauth'
 gem 'dotenv-rails'
-# gem 'omniauth-google-oauth2'
+gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin-oauth2'
 
 # Use Active Storage variant
@@ -46,6 +46,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'thin'
+  gem 'pry'
 end
 
 group :test do

@@ -1,5 +1,5 @@
 class User::SessionsController < ApplicationController
-    skip_before_action :redirect_if_not_authenticated, only: [:new, :create]
+    skip_before_action :redirect_if_not_authenticated, only: [:new, :create, :omniauth]
 
     def new
         if user_authenticated 
@@ -24,5 +24,15 @@ class User::SessionsController < ApplicationController
         session.delete("user_id")
         redirect_to root_path
     end 
+
+    def omniauth
+        binding.pry
+    end
+
+    private 
+
+    def auth 
+        request.env['omniauth.auth']
+    end
     
 end
