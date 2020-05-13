@@ -25,8 +25,19 @@ class User::SessionsController < ApplicationController
         redirect_to root_path
     end 
 
-    def omniauth
+    def google
         binding.pry
+        
+        # @user = User.find_by(email: auth["info"]["email"])
+        
+        # if @user 
+        #     session[:user_id] = @user.id 
+        # else 
+        #     # create agent or recruiter from auth has and state param
+
+        # end
+
+        # binding.pry
     end
 
     private 

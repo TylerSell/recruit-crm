@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   #   resources :agents, :recruiters, only: [:index, :new, :create, :show, :edit, :update]
   # end
 
-  get '/auth/:provider/callback' => 'user/sessions#omniauth'
+  get '/auth/:provider/callback' => 'user/sessions#google'
 
   scope '/user' do 
     resources :agents, only: [:new, :create, :show, :edit, :update]
