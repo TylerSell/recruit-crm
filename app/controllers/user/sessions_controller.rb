@@ -1,5 +1,5 @@
 class User::SessionsController < ApplicationController
-    skip_before_action :redirect_if_not_authenticated, only: [:new, :create, :omniauth]
+    skip_before_action :redirect_if_not_authenticated, only: [:new, :create, :facebook]
 
     def new
         if user_authenticated 
@@ -25,25 +25,18 @@ class User::SessionsController < ApplicationController
         redirect_to root_path
     end 
 
-    def google
+    def facebook
         binding.pry
-        
-        # @user = User.find_by(email: auth["info"]["email"])
-        
-        # if @user 
-        #     session[:user_id] = @user.id 
-        # else 
-        #     # create agent or recruiter from auth has and state param
-
-        # end
-
-        # binding.pry
     end
 
     private 
 
     def auth 
         request.env['omniauth.auth']
+    end
+
+    def state
+        request.env['omniauth.state']
     end
     
 end

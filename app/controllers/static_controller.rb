@@ -12,11 +12,5 @@ class StaticController < ApplicationController
             render :home
         end
     end 
-
-    def agent 
-    end 
-
-    def recruiter
-    end
     
 end
