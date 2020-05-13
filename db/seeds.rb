@@ -7,13 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # user_id = 1
-Agent.create(first_name: 'Default', last_name: 'Agent', phone_number: '555-123-4567', email: 'default.agent@noemail.com', password: 'test')
+Agent.create!(first_name: 'Default', last_name: 'Agent', phone_number: '555-123-4567', email: 'default.agent@noemail.com', password: 'password')
 # user_id = 2 
-Recruiter.create(first_name: 'Default', last_name: 'Recruiter', phone_number: '555-123-4568', email: 'default.recruiter@noemail.com', password: 'test')
+Recruiter.create!(first_name: 'Default', last_name: 'Recruiter', phone_number: '555-123-4568', email: 'default.recruiter@noemail.com', password: 'password')
 # user_id = 3
-Agent.create(first_name: 'Tyler', last_name: 'Sell', phone_number: '555-123-4569', email: 'tyler@email.com', password: 'test')
+Agent.create!(first_name: 'Tyler', last_name: 'Sell', phone_number: '555-123-4569', email: 'tyler@email.com', password: 'password')
 # user_id = 4
-Recruiter.create(first_name: 'Alyson', last_name: 'Hankins', phone_number: '555-123-4560', email: 'alyson@email.com', password: 'test')
+Recruiter.create!(first_name: 'Alyson', last_name: 'Hankins', phone_number: '555-123-4560', email: 'alyson@email.com', password: 'password')
 
 
 # candidates boys
