@@ -32,7 +32,7 @@ class User::SessionsController < ApplicationController
             session[:user_id] = @user.id 
             redirect_to candidates_path
         else 
-            facebook_user = state.new 
+            facebook_user = state.constantize.new 
             facebook_user.first_name = auth.info.first_name
             facebook_user.last_name = auth.info.last_name
             facebook_user.phone_number = ""
