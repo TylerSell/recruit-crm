@@ -18,9 +18,9 @@ Recruiter.create(first_name: 'Alyson', last_name: 'Hankins', phone_number: '555-
 
 # candidates boys
 # interested
-Candidate.create(first_name: 'Liam', last_name: 'Smith', email: 'liam.smith@email.com', phone_number: '555-123-4561', address_1: '2880 Fescue Rd.', address_2: 'Apt. A', city: 'St. Louis', state: 'MO', zip_code: '63101', date_of_birth: '05/20/2000', interview_date: '', test_date: '', stage: 1, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 2)
+Candidate.create(first_name: 'Liam', last_name: 'Smith', email: 'liam.smith@email.com', phone_number: '555-123-4561', address_1: '2880 Fescue Rd.', address_2: 'Apt. A', city: 'St. Louis', state: 'MO', zip_code: '63101', date_of_birth: '05/20/2000', interview_date: '', test_date: '', stage: 1, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # interview_set
-Candidate.create(first_name: 'Noah', last_name: 'Williams', email: 'noah.williams@email.com', phone_number: '555-123-4562', address_1: '13 Second St.', address_2: '', city: 'St. Louis', state: 'MO', zip_code: '63105', date_of_birth: '05/30/1999', interview_date: '05/14/2020', test_date: '', stage: 2, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 1, recruiter_id: 4)
+Candidate.create(first_name: 'Noah', last_name: 'Williams', email: 'noah.williams@email.com', phone_number: '555-123-4562', address_1: '13 Second St.', address_2: '', city: 'St. Louis', state: 'MO', zip_code: '63105', date_of_birth: '05/30/1999', interview_date: '05/14/2020', test_date: '', stage: 2, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # affidavit_sent
 Candidate.create(first_name: 'William', last_name: 'Johnson', email: 'william.johnson@email.com', phone_number: '555-123-4563', address_1: '452 Main St.', address_2: '', city: 'Ofallon', state: 'MO', zip_code: '63367', date_of_birth: '08/13/1997', interview_date: '05/07/2020', test_date: '', stage: 3, affidavit_sent: true, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # affidavit_received
@@ -36,7 +36,7 @@ Candidate.create(first_name: 'Lucas', last_name: 'Wilson', email: 'lucas.wilson@
 # not_interested
 Candidate.create(first_name: 'Mason', last_name: 'Moore', email: 'mason.moore@email.com', phone_number: '555-123-4572', address_1: '4250 Cedar St', address_2: 'Box 12', city: 'St. Louis', state: 'MO', zip_code: '63106', date_of_birth: '02/17/2000', interview_date: '05/04/2020', test_date: '', stage: 9, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # no_contact
-Candidate.create(first_name: 'Logan', last_name: 'Taylor', email: 'logan.taylor@email.com', phone_number: '555-123-4573', address_1: '92 Eigth St.', address_2: '', city: 'Ofallon', state: 'MO', zip_code: '63367', date_of_birth: '', interview_date: '', test_date: '', stage: 10, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 2)
+Candidate.create(first_name: 'Logan', last_name: 'Taylor', email: 'logan.taylor@email.com', phone_number: '555-123-4573', address_1: '92 Eigth St.', address_2: '', city: 'Ofallon', state: 'MO', zip_code: '63367', date_of_birth: '', interview_date: '', test_date: '', stage: 10, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 
 
 
@@ -45,7 +45,7 @@ Candidate.create(first_name: 'Logan', last_name: 'Taylor', email: 'logan.taylor@
 # interested
 Candidate.create(first_name: 'Emma', last_name: 'Anderson', email: 'emma.anderson@email.com', phone_number: '555-123-4574', address_1: '1313 View Place', address_2: '', city: 'St. Louis', state: 'MO', zip_code: '63130', date_of_birth: '03/17/1994', interview_date: '', test_date: '', stage: 1, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # interview_set
-Candidate.create(first_name: 'Olivia', last_name: 'Thomas', email: 'olivia.thomas@email.com', phone_number: '555-123-4575', address_1: '702 7th St.', address_2: '', city: 'St. Louis', state: 'MO', zip_code: '63156', date_of_birth: '11/19/2000', interview_date: '05/10/2020', test_date: '', stage: 2, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 1, recruiter_id: 4)
+Candidate.create(first_name: 'Olivia', last_name: 'Thomas', email: 'olivia.thomas@email.com', phone_number: '555-123-4575', address_1: '702 7th St.', address_2: '', city: 'St. Louis', state: 'MO', zip_code: '63156', date_of_birth: '11/19/2000', interview_date: '05/10/2020', test_date: '', stage: 2, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # affidavit_sent
 Candidate.create(first_name: 'Ava', last_name: 'Jackson', email: 'ava.jackson@email.com', phone_number: '555-123-4576', address_1: '9190 4th St.', address_2: '', city: 'Columbia', state: 'MO', zip_code: '65203', date_of_birth: '06/19/1992', interview_date: '05/07/2020', test_date: '', stage: 3, affidavit_sent: true, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # affidavit_received
@@ -61,4 +61,4 @@ Candidate.create(first_name: 'Amelia', last_name: 'Garcia', email: 'amelia.garci
 # not_interested
 Candidate.create(first_name: 'Harper', last_name: 'Martinez', email: 'harper.martinez@email.com', phone_number: '555-123-4582', address_1: '6170 Oak Tree Ln.', address_2: '', city: 'St. Louis', state: 'MO', zip_code: '63125', date_of_birth: '11/15/1996', interview_date: '05/03/2020', test_date: '', stage: 9, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
 # no_contact
-Candidate.create(first_name: 'Evelyn', last_name: 'Robinson', email: 'evelyn.robinson@email.com', phone_number: '555-123-4583', address_1: '7283 Maple Bridge Ct.', address_2: 'Apt. 1', city: 'St. Louis', state: 'MO', zip_code: '63182', date_of_birth: '05/05/1995', interview_date: '', test_date: '', stage: 10, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 2)
+Candidate.create(first_name: 'Evelyn', last_name: 'Robinson', email: 'evelyn.robinson@email.com', phone_number: '555-123-4583', address_1: '7283 Maple Bridge Ct.', address_2: 'Apt. 1', city: 'St. Louis', state: 'MO', zip_code: '63182', date_of_birth: '05/05/1995', interview_date: '', test_date: '', stage: 10, affidavit_sent: false, affidavit_received: false, voucher_sent: false, test_passed: false, licensed: false, agent_id: 3, recruiter_id: 4)
