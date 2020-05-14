@@ -27,25 +27,23 @@ class User::SessionsController < ApplicationController
 
     def facebook
         @user = User.find_by(email: auth.info.email)
-
-        if @user 
-            session[:user_id] = @user.id 
-            redirect_to candidates_path
-        else 
-            facebook_user = state.constantize.new 
-            facebook_user.first_name = auth.info.first_name
-            facebook_user.last_name = auth.info.last_name
-            facebook_user.phone_number = ""
-            facebook_user.email = auth.info.email
-            facebook_user.password = SecureRandom.hex(12)
-            facebook_user.save
-            if facebook_user.save
-                session[:user_id] = facebook_user.id 
+        
+        if state == "Agent" || "Recruiter"
+            if @user 
+                session[:user_id] = @user.id 
                 redirect_to candidates_path
-            else
-                redirect_to root_path
+            else 
+                create_from_facebook
+                if @facebook_user.save
+                    session[:user_id] = facebook_user.id 
+                    redirect_to candidates_path
+                else
+                    redirect_to root_path, alert: "Something went wrong please try again."
+                end
             end
-        end 
+        else 
+            redirect_to root_path, alert: "Access from Facebook failed. Please try again."
+        end
     end
 
     private 
@@ -58,8 +56,14 @@ class User::SessionsController < ApplicationController
         request.env['omniauth.params']['state']
     end
 
-    def create_params
-
+    def create_from_facebook
+        @facebook_user = state.constantize.new 
+        @facebook_user.first_name = auth.info.first_name
+        @facebook_user.last_name = auth.info.last_name
+        @facebook_user.phone_number = ""
+        @facebook_user.email = auth.info.email
+        @facebook_user.password = SecureRandom.hex(12)
+        @facebook_user.save
     end
     
 end
