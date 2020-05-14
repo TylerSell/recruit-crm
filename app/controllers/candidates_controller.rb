@@ -5,27 +5,9 @@ class CandidatesController < ApplicationController
 
     def index
         if is_agent?
-            @candidates_1 = Candidate.agent(session[:user_id]).stage_1.order_by_modified
-            @candidates_2 = Candidate.agent(session[:user_id]).stage_2.order_by_interview
-            @candidates_3 = Candidate.agent(session[:user_id]).stage_3.order_by_modified
-            @candidates_4 = Candidate.agent(session[:user_id]).stage_4.order_by_modified
-            @candidates_5 = Candidate.agent(session[:user_id]).stage_5.order_by_modified
-            @candidates_6 = Candidate.agent(session[:user_id]).stage_6.order_by_test
-            @candidates_7 = Candidate.agent(session[:user_id]).stage_7.order_by_modified
-            @candidates_8 = Candidate.agent(session[:user_id]).stage_8.order_by_modified_desc
-            @candidates_9 = Candidate.agent(session[:user_id]).stage_9.order_by_modified_desc
-            @candidates_10 = Candidate.agent(session[:user_id]).stage_10.order_by_modified_desc
+            agent_candidates
         else 
-            @candidates_1 = Candidate.recruiter(session[:user_id]).stage_1
-            @candidates_2 = Candidate.recruiter(session[:user_id]).stage_2
-            @candidates_3 = Candidate.recruiter(session[:user_id]).stage_3
-            @candidates_4 = Candidate.recruiter(session[:user_id]).stage_4
-            @candidates_5 = Candidate.recruiter(session[:user_id]).stage_5
-            @candidates_6 = Candidate.recruiter(session[:user_id]).stage_6
-            @candidates_7 = Candidate.recruiter(session[:user_id]).stage_7
-            @candidates_8 = Candidate.recruiter(session[:user_id]).stage_8
-            @candidates_9 = Candidate.recruiter(session[:user_id]).stage_9
-            @candidates_10 = Candidate.recruiter(session[:user_id]).stage_10
+            recruiter_candidates
         end
     end
     
@@ -82,19 +64,30 @@ class CandidatesController < ApplicationController
         params.require(:candidate).permit(:first_name, :last_name, :email, :phone_number, :address_1, :address_2, :city, :state, :zip_code, :date_of_birth, :interview_date, :test_date, :stage, :affidavit_sent, :affidavit_received, :voucher_sent, :test_passed, :licensed, :agent_id, :recruiter_id)
     end 
 
-    # def interested
-    #     @interested = Candidate.all.where(stage: '1')
-    # end
+    def agent_candidates
+        @candidates_1 = Candidate.agent(session[:user_id]).stage_1.order_by_modified
+        @candidates_2 = Candidate.agent(session[:user_id]).stage_2.order_by_interview
+        @candidates_3 = Candidate.agent(session[:user_id]).stage_3.order_by_modified
+        @candidates_4 = Candidate.agent(session[:user_id]).stage_4.order_by_modified
+        @candidates_5 = Candidate.agent(session[:user_id]).stage_5.order_by_modified
+        @candidates_6 = Candidate.agent(session[:user_id]).stage_6.order_by_test
+        @candidates_7 = Candidate.agent(session[:user_id]).stage_7.order_by_modified
+        @candidates_8 = Candidate.agent(session[:user_id]).stage_8.order_by_modified_desc
+        @candidates_9 = Candidate.agent(session[:user_id]).stage_9.order_by_modified_desc
+        @candidates_10 = Candidate.agent(session[:user_id]).stage_10.order_by_modified_desc
+    end
 
-    # scope :interested, -> { where(stage: '1')}
-    # scope :inteview_set, -> { where(stage: '2')}
-    # scope :affidavit_sent, -> { where(stage: '3')}
-    # scope :voucher_sent, -> { where(stage: '4')}
-    # scope :studying, -> { where(stage: '5')}
-    # scope :test_scheduled, -> { where(stage: '6')}
-    # scope :sent_to_contracting, -> { where(stage: '7')}
-    # scope :hired, -> { where(stage: '8')}
-    # scope :not_interested, -> { where(stage: '9')}
-    # scope :no_contact, -> { where(stage: '10')}
+    def recruiter_candidates
+        @candidates_1 = Candidate.recruiter(session[:user_id]).stage_1.order_by_modified
+        @candidates_2 = Candidate.recruiter(session[:user_id]).stage_2.order_by_interview
+        @candidates_3 = Candidate.recruiter(session[:user_id]).stage_3.order_by_modified
+        @candidates_4 = Candidate.recruiter(session[:user_id]).stage_4.order_by_modified
+        @candidates_5 = Candidate.recruiter(session[:user_id]).stage_5.order_by_modified
+        @candidates_6 = Candidate.recruiter(session[:user_id]).stage_6.order_by_test
+        @candidates_7 = Candidate.recruiter(session[:user_id]).stage_7.order_by_modified
+        @candidates_8 = Candidate.recruiter(session[:user_id]).stage_8.order_by_modified_desc
+        @candidates_9 = Candidate.recruiter(session[:user_id]).stage_9.order_by_modified_desc
+        @candidates_10 = Candidate.recruiter(session[:user_id]).stage_10.order_by_modified_desc
+    end
 
 end
