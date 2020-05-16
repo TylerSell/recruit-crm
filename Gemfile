@@ -27,6 +27,8 @@ gem 'dotenv-rails'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-linkedin-oauth2'
 gem 'omniauth-facebook'
+gem 'bootstrap'
+gem 'jquery-rails'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
