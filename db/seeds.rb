@@ -7,9 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # user_id = 1
-Agent.create!(first_name: 'Default', last_name: 'Agent', phone_number: '555-123-4567', email: 'default.agent@noemail.com', password: 'password')
+Agent.create!(first_name: 'No', last_name: 'Agent', phone_number: '555-123-4567', email: 'no.agent@noemail.com', password: 'password')
 # user_id = 2 
-Recruiter.create!(first_name: 'Default', last_name: 'Recruiter', phone_number: '555-123-4568', email: 'default.recruiter@noemail.com', password: 'password')
+Recruiter.create!(first_name: 'No', last_name: 'Recruiter', phone_number: '555-123-4568', email: 'no.recruiter@noemail.com', password: 'password')
 # user_id = 3
 Agent.create!(first_name: 'Tyler', last_name: 'Sell', phone_number: '555-123-4569', email: 'tyler@email.com', password: 'password')
 # user_id = 4
