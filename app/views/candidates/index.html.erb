@@ -46,7 +46,7 @@
     <div>
         <p>
             <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <strong>Last Updated: </strong><%= candidate.updated_at.strftime("%b %d, %Y at %l:%M %P") %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <strong>Last Updated: </strong><%= candidate.updated_at.strftime("%b %d, %Y") %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
             <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
             <%= link_to "View", candidate_path(candidate) %>
         </p>
@@ -121,7 +121,7 @@
 
 <div>
     <div>
-        <h3>Stage 8 - Hired</h3>
+        <h3>Stage 8 - Hired and Contracting Complete</h3>
     </div>
 
     <% @candidates_8.each do |candidate| %>

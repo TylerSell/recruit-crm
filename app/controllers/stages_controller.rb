@@ -50,9 +50,9 @@ class StagesController < ApplicationController
 
     def stage_7
         if is_agent?
-            @candidates = Candidate.agent(session[:user_id]).stage_7.order_by_modified
+            @candidates = Candidate.agent(session[:user_id]).stage_7.order_by_test
         else 
-            @candidates = Candidate.recruiter(session[:user_id]).stage_7.order_by_modified 
+            @candidates = Candidate.recruiter(session[:user_id]).stage_7.order_by_test 
         end
     end
 

@@ -1,0 +1,16 @@
+<h1>Stage 1 - Candidate has shown interest</h1>
+
+<div>
+    <% @candidates.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <strong>Added on: </strong><%= candidate.created_at.strftime("%b %d, %Y") %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <strong>Agent: </strong><%= candidate.agent.first_name %> <%= candidate.agent.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <strong>Recruiter: </strong><%= candidate.recruiter.first_name %> <%= candidate.recruiter.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+    <% end %>
+</div>

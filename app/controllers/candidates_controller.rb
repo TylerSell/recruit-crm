@@ -70,7 +70,7 @@ class CandidatesController < ApplicationController
         @candidates_4 = Candidate.agent(session[:user_id]).stage_4.order_by_modified
         @candidates_5 = Candidate.agent(session[:user_id]).stage_5.order_by_modified
         @candidates_6 = Candidate.agent(session[:user_id]).stage_6.order_by_test
-        @candidates_7 = Candidate.agent(session[:user_id]).stage_7.order_by_modified
+        @candidates_7 = Candidate.agent(session[:user_id]).stage_7.order_by_test
         @candidates_8 = Candidate.agent(session[:user_id]).stage_8.order_by_modified_desc
         @candidates_9 = Candidate.agent(session[:user_id]).stage_9.order_by_modified_desc
         @candidates_10 = Candidate.agent(session[:user_id]).stage_10.order_by_modified_desc

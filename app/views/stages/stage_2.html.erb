@@ -1,0 +1,14 @@
+<h1>Stage 2 - Candidate Interview Set with Agent</h1>
+
+<div>
+    <% @candidates.each do |candidate| %>
+    <div>
+        <p>
+            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <strong>Interview on: </strong><%= candidate.interview_date %> with <strong><%= candidate.agent.first_name %> <%= candidate.agent.last_name %></strong>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
+            <%= link_to "View", candidate_path(candidate) %>
+        </p>
+    </div>
+    <% end %>
+</div>
