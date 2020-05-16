@@ -9,11 +9,41 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="mh-100">
+    <nav class="shadow navbar navbar-expand-lg navbar-light bg-white">
+      <span class="navbar-brand h1">Insurance Recruiter CRM</span>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+          <li class="nav-item">
+            <%= link_to "Login", login_path, :class => "btn btn-info" %>
+          </li>
+        </ul>
+      </div>
+    </nav>
     
-
-    <%= yield %>
+    <div class="container mt-3" style="height: 100vh;">
+      <%= yield %>
+    </div>
+    
 
   </body>
 </html>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <span class="navbar-brand mb-0 h1">Insurance Recruiter CRM</span>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <%= link_to "Login", login_path, :class => "btn btn-info" %>
+      </li>
+    </ul>
+  </div>
+</nav>

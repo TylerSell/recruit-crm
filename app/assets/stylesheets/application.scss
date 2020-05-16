@@ -1,7 +1,10 @@
 $enable-shadows: true;
-$body-bg: #eaeaf8;
+$body-bg: #fafafe;
 $purple: #5736e1;
 $teal: #65EAF2;
 $gray-200: #eaeaf8;
+$primary: $purple;
+$info: $teal;
+$border-radius: .6rem;
 
 @import "bootstrap";
