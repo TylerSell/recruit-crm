@@ -1,3 +1,13 @@
-<%= render 'partials/recruiter_form' %>
-
-<%= link_to "Signup or Login with Facebook", '/auth/facebook?state=Recruiter' %>
+<div class="col-8 mt-5">
+    <div class="shadow card text-center">
+        <h5 class="card-header">Agent Signup</h5>
+        <div class="card-body">
+            <p class="card-text">
+                <%= render 'partials/recruiter_form' %>
+            </p>
+            <p class="card-text">
+                <%= link_to "Signup or Login with Facebook", '/auth/facebook?state=Recruiter' %>
+            </p>
+        </div>
+    </div>
+</div>
