@@ -1,10 +1,12 @@
-<h1>Name: <%= @agent.first_name %> <%= @agent.last_name %></h1>
-<h3>Phone: <%= @agent.phone_number %></h3>
-<h3>Email: <%= @agent.email %></h3>
-
-<%= link_to "Edit", edit_agent_path(@agent) %><br><br>
-<%= link_to "Logout", logout_path %><br><br>
-<%= link_to "My Candidates", candidates_path %><br><br>
-<%= link_to "New Candidate", new_candidate_path %>
-
-
+<div class="col-md-4 col-xl-5 offset-md-2 offset-xl-2 align-self-center">
+    <div class="shadow card text-center">
+        <h5 class="card-header"><%= @agent.first_name %> <%= @agent.last_name %></h5>
+        <div class="card-body">
+            <p class="card-text">
+                Phone: <%= @agent.phone_number %><br>
+                Email: <%= @agent.email %>
+            </p>
+            <%= link_to "Edit Profile", edit_agent_path, :class => "btn btn-primary" %>
+        </div>
+    </div>
+</div>

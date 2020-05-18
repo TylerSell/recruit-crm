@@ -19,13 +19,13 @@
     
     <div class="container-fluid">
       <div class="row flex-xl-nowrap">
-        <div class="col-12 col-md-3 col-xl-2 bg-dark">
+        <div class="col-md-4 col-xl-3 bg-dark">
           <nav class="bg-dark mx-1">
             <div class="container d-flex justify-content-center mt-2">
               <% if is_agent? %>
-                <%= link_to "#{current_user.first_name} #{current_user.last_name}", agent_path(current_user), :class => "h2 text-white text-decoration-none" %><br>
+                <%= link_to "#{current_user.first_name} #{current_user.last_name}", agent_path(current_user), :class => "h3 text-white text-decoration-none" %><br>
               <% else %>
-                <%= link_to "#{current_user.first_name} #{current_user.last_name}", recruiter_path(current_user), :class => "h2 text-light text-decoration-none" %>
+                <%= link_to "#{current_user.first_name} #{current_user.last_name}", recruiter_path(current_user), :class => "h3 text-light text-decoration-none" %>
               <% end %>
             </div>
             <div class="container d-flex justify-content-center">
@@ -70,7 +70,7 @@
             <div class="container d-flex justify-content-start ml-3">
               <%= link_to "Stage 9", stage_9_path, :class => "h5 text-secondary text-decoration-none" %>
             </div>
-            <div class="container d-flex justify-content-start ml-3">
+            <div class="container d-flex justify-content-start ml-3 pb-2">
               <%= link_to "Stage 10", stage_10_path, :class => "h5 text-secondary text-decoration-none" %>
             </div>
           </nav>
@@ -79,44 +79,7 @@
         <%= yield %>
 
       </div>
-      
     </div>
-    
-    
-    
-    
-    
-    
-
-
-          
-
-
-        
 
   </body>
 </html>
-
-
-          
-
-<div class="container-fluid">
-  <div class="row flex-xl-nowrap">
-    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
-          
-
-<nav class="collapse bd-links" id="bd-docs-nav">
-  <div class="bd-toc-item">
-    <a class="bd-toc-link" href="/docs/4.0/getting-started/introduction/">
-      Getting started
-    </a>
-
-    <ul class="nav bd-sidenav">
-      <li>
-        <a href="/docs/4.0/getting-started/introduction/">
-            Introduction
-        </a>
-      </li>
-    </ul>
-
-</nav>

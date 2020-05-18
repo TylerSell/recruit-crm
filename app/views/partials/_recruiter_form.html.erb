@@ -2,8 +2,7 @@
     <% if @recruiter.errors.any? %>
         <div id="error_explanation">
             <h2>
-                <%= pluralize(@recruiter.errors.count, "error") %>
-                prohibited this recruiter from being saved:
+                <%= pluralize(@recruiter.errors.count, "error") %>:
             </h2>
         
             <ul>

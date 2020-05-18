@@ -8,8 +8,8 @@ class RecruitersController < ApplicationController
     end
     
     def new
-        render :layout => "application"
         @recruiter = Recruiter.new
+        render :layout => "application"
     end 
 
     def create
@@ -32,7 +32,12 @@ class RecruitersController < ApplicationController
 
     def update
         @recruiter.update(recruiter_params)
-        redirect_to recruiter_path(@recruiter)
+        
+        if @recruiter.save 
+            redirect_to recruiter_path(@recruiter)
+        else 
+            render :edit 
+        end
     end 
 
 # --------------------------PRIVATE METHODS---------------------------------------

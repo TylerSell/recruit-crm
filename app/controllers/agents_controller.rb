@@ -7,8 +7,8 @@ class AgentsController < ApplicationController
         if user_authenticated 
             redirect_to candidates_path 
         else
-            render :layout => "application"
             @agent = Agent.new
+            render :layout => "application"
         end
     end 
 
