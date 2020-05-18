@@ -9,11 +9,114 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
 
     
 
-    <%= yield %>
+  <body class="mh-100">
+    <header class="shadow navbar navbar-light bg-white">
+      <span class="navbar-brand ml-auto mb-0 h1 text-primary">Insurance Recruiter CRM</span>
+    </header>
+    
+    <div class="container-fluid">
+      <div class="row flex-xl-nowrap">
+        <div class="col-12 col-md-3 col-xl-2 bg-dark">
+          <nav class="bg-dark mx-1">
+            <div class="container d-flex justify-content-center mt-2">
+              <% if is_agent? %>
+                <%= link_to "#{current_user.first_name} #{current_user.last_name}", agent_path(current_user), :class => "h2 text-white text-decoration-none" %><br>
+              <% else %>
+                <%= link_to "#{current_user.first_name} #{current_user.last_name}", recruiter_path(current_user), :class => "h2 text-light text-decoration-none" %>
+              <% end %>
+            </div>
+            <div class="container d-flex justify-content-center">
+              <%= link_to "Logout", logout_path, :class => "btn btn-info btn-sm text-muted" %>
+            </div>
+            <div class="container d-flex justify-content-start mt-3">
+              <h3 class="h4 text-light text-decoration-none">Dashboard</h3>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Dashboard", candidates_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "New Candidate", new_candidate_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start mt-3">
+              <h3 class="h4 text-light text-decoration-none">Stages</h3>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 1", stage_1_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 2", stage_2_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 3", stage_3_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 4", stage_4_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 5", stage_5_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 6", stage_6_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 7", stage_7_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 8", stage_8_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 9", stage_9_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+            <div class="container d-flex justify-content-start ml-3">
+              <%= link_to "Stage 10", stage_10_path, :class => "h5 text-secondary text-decoration-none" %>
+            </div>
+          </nav>
+        </div>
+
+        <%= yield %>
+
+      </div>
+      
+    </div>
+    
+    
+    
+    
+    
+    
+
+
+          
+
+
+        
 
   </body>
 </html>
+
+
+          
+
+<div class="container-fluid">
+  <div class="row flex-xl-nowrap">
+    <div class="col-12 col-md-3 col-xl-2 bd-sidebar">
+          
+
+<nav class="collapse bd-links" id="bd-docs-nav">
+  <div class="bd-toc-item">
+    <a class="bd-toc-link" href="/docs/4.0/getting-started/introduction/">
+      Getting started
+    </a>
+
+    <ul class="nav bd-sidenav">
+      <li>
+        <a href="/docs/4.0/getting-started/introduction/">
+            Introduction
+        </a>
+      </li>
+    </ul>
+
+</nav>

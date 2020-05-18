@@ -1,4 +1,5 @@
 class StagesController < ApplicationController
+    layout "sidebar"
 
     def stage_1
         if is_agent?

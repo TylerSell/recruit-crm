@@ -1,6 +1,7 @@
 class CandidatesController < ApplicationController
     # EVEN THOUGH THIS IS A BEFORE ACTION EXCLUDING :NEW, :INDEX, :CREATE THE NEW PATH STILL HITS THIS LINE AND THROWS A WRONG NUMBER OF ARGS ERROR
     # before_action :find_candidate, only: [:edit, :show, :update]
+    layout "sidebar"
 
     def index
         if is_agent?

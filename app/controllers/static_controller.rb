@@ -1,5 +1,6 @@
 class StaticController < ApplicationController
     skip_before_action :redirect_if_not_authenticated, only: [:home]
+    layout "application"
 
     def home 
         if current_user 

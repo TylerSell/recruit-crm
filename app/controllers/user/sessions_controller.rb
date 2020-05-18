@@ -5,6 +5,7 @@ class User::SessionsController < ApplicationController
         if user_authenticated 
             redirect_to candidates_path 
         else
+            render :layout => "application"
             @user = User.new 
         end
     end 

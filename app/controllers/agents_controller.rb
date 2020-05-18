@@ -1,11 +1,13 @@
 class AgentsController < ApplicationController
     before_action :find_agent, only: [:show, :edit, :update]
     skip_before_action :redirect_if_not_authenticated, only: [:new, :create]
+    layout "sidebar"
     
     def new
         if user_authenticated 
             redirect_to candidates_path 
         else
+            render :layout => "application"
             @agent = Agent.new
         end
     end 
