@@ -1,9 +1,27 @@
-<%= form_for '/login' do %>
-    <%= label_tag :email %>
-    <%= text_field_tag :email %><br><br>
-
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
-
-    <%= submit_tag "Login" %>
-<% end %>
+<div class="col-4 mt-5">
+    <div class="shadow card">
+        <h5 class="card-header text-center">Login</h5>
+        <div class="card-body">
+            <p class="card-text">
+                <%= form_for '/login' do |f| %>
+                    <div class="form-group">
+                        <%= f.label :email %>
+                        <%= f.text_field :email, :class => "form-control" %>
+                    </div>
+                    <div class="form-group">
+                        <%= f.label :password %>
+                        <%= f.password_field :password, :class => "form-control" %>
+                    </div>
+                    <%= submit_tag "Login", :class => "btn btn-primary btn-block"%>
+                <% end %>
+            </p>
+            <p class="card-text">
+                <%= link_to '/auth/facebook' do %>
+                    <button class="btn btn-outline-success btn-block">
+                        <i class="fab fa-facebook"></i> Login with facebook 
+                    </button>
+                <% end %>
+            </p>
+        </div>
+    </div>
+</div>
