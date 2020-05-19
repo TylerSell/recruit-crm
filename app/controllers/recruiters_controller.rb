@@ -19,7 +19,7 @@ class RecruitersController < ApplicationController
             session[:user_id] = @recruiter.id 
             redirect_to recruiter_path(@recruiter)
         else 
-            render 'user/recruiters/new'
+            render 'recruiters/new', :layout => "application"
         end
 
     end 

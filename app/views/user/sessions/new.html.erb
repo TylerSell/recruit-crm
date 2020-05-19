@@ -3,22 +3,27 @@
         <h5 class="card-header text-center">Login</h5>
         <div class="card-body">
             <p class="card-text">
-                <%= form_for '/login' do |f| %>
+                <%= form_tag '/login' do %>
+                    <% flash.each do |type, msg| %>
+                        <div class="alert alert-danger">
+                            <%= msg %>
+                        </div>
+                    <% end %>
                     <div class="form-group">
-                        <%= f.label :email %>
-                        <%= f.text_field :email, :class => "form-control" %>
+                        <%= label_tag :email %>
+                        <%= text_field_tag :email, nil, :class => "form-control" %>
                     </div>
                     <div class="form-group">
-                        <%= f.label :password %>
-                        <%= f.password_field :password, :class => "form-control" %>
+                        <%= label_tag :password %>
+                        <%= password_field_tag :password, nil, :class => "form-control" %>
                     </div>
-                    <%= submit_tag "Login", :class => "btn btn-primary btn-block"%>
+                    <%= submit_tag "Login", :class => "btn btn-primary btn-block" %>
                 <% end %>
             </p>
             <p class="card-text">
                 <%= link_to '/auth/facebook' do %>
                     <button class="btn btn-outline-success btn-block">
-                        <i class="fab fa-facebook"></i> Login with facebook 
+                        <i class="fab fa-facebook"> &nbsp;Login with facebook </i>
                     </button>
                 <% end %>
             </p>

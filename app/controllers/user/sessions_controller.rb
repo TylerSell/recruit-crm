@@ -13,11 +13,26 @@ class User::SessionsController < ApplicationController
     def create 
         @user = User.find_by(email: params[:email])
 
+        # if @user 
+        #     if @user.authenticate(params[:password])
+        #         session[:user_id] = @user.id 
+        #         redirect_to candidates_path
+        #     else 
+        #         flash[:alert] = "Password incorrect"
+        #         render :new, :layout => "application"
+        #     end
+        # else 
+        #     flash[:alert] = "User not found"
+        #     render :new, :layout => "application"
+        # end
+
+
         if @user && @user.authenticate(params[:password])
             session[:user_id] = @user.id 
             redirect_to candidates_path 
-        else 
-            redirect_to root_path
+        else
+            flash[:alert] = "Email or Password incorrect"
+            render :new, :layout => "application"
         end 
     end 
 

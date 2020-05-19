@@ -19,7 +19,7 @@ class AgentsController < ApplicationController
             session[:user_id] = @agent.id 
             redirect_to agent_path(@agent)
         else 
-            render 'user/agents/new'
+            render '/agents/new', :layout => "application"
         end
 
     end 
@@ -32,7 +32,11 @@ class AgentsController < ApplicationController
 
     def update
         @agent.update(agent_params)
-        redirect_to agent_path(@agent)
+        if @agent.save 
+            redirect_to agent_path(@agent)
+        else 
+            render :edit 
+        end
     end 
 
 # --------------------------PRIVATE METHODS---------------------------------------

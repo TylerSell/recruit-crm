@@ -1,10 +1,11 @@
 <%= form_for @recruiter do |f| %>
     <% if @recruiter.errors.any? %>
-        <div id="error_explanation">
-            <h2>
-                <%= pluralize(@recruiter.errors.count, "error") %>:
-            </h2>
-        
+        <div id="error_explanation" class="alert alert-danger">
+            <h4 class="alert-heading">
+                <%= pluralize(@recruiter.errors.count, "error") %>
+                prohibited this recruiter from being saved:
+            </h4>
+            <hr>
             <ul>
                 <% @recruiter.errors.full_messages.each do |msg| %>
                     <li><%= msg %></li>
@@ -12,16 +13,26 @@
             </ul>
         </div>
     <% end %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %><br><br>
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %><br><br>
-    <%= f.label :phone_number %>
-    <%= f.text_field :phone_number %><br><br>
-    <%= f.label :email %>
-    <%= f.text_field :email %><br><br>
-    <%= f.label :password %>
-    <%= f.password_field :password %>
+    <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :last_name %>
+        <%= f.text_field :last_name, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :phone_number %>
+        <%= f.text_field :phone_number, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :email %>
+        <%= f.text_field :email, :class => "form-control" %>
+    </div>
+    <div class="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => "form-control" %>
+    </div>
     
-    <%= f.submit %>
+    <%= f.submit "Signup", :class => 'btn btn-primary btn-block text-decoration-none'%>
 <% end %> 

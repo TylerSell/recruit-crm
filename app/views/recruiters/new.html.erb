@@ -1,12 +1,16 @@
 <div class="col-4 mt-5">
-    <div class="shadow card">
+    <div class="shadow card mb-5">
         <h5 class="card-header text-center">Recruiter Signup</h5>
         <div class="card-body">
             <p class="card-text">
                 <%= render 'partials/recruiter_form' %>
             </p>
             <p class="card-text">
-                <%= link_to "Signup or Login with Facebook", '/auth/facebook?state=Recruiter' %>
+                <%= link_to '/auth/facebook?state=Recruiter' do %>
+                    <button class="btn btn-outline-success btn-block">
+                        <i class="fab fa-facebook text-decoration-none"> &nbsp;Signup with Facebook </i> 
+                    </button>
+                <% end %>
             </p>
         </div>
     </div>
