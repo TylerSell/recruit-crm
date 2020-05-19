@@ -11,7 +11,7 @@
                         <p class="h6"><strong>Phone:</strong> <%= @candidate.phone_number %></p>
                     </div>
                 </div>
-                <div class="row ml-3">
+                <div class="row ml-3 mt-2">
                     <div class="col">
                         <p class="h6"><strong>Address:</strong> <%= @candidate.address_1 %></p>
                     </div>
@@ -21,7 +21,7 @@
                         <% end %>
                     </div>
                 </div>
-                <div class="row ml-3">
+                <div class="row ml-3 mt-2">
                     <div class="col">
                         <p class="h6"><strong>City:</strong> <%= @candidate.city %></p>
                     </div>
@@ -32,7 +32,7 @@
                         <p class="h6"><strong>Zip:</strong> <%= @candidate.zip_code %></p>
                     </div>
                 </div>
-                <div class="row ml-3">
+                <div class="row ml-3 mt-2">
                     <div class="col">
                         <p class="h6">
                             <strong>Stage:</strong> <%= @candidate.stage %> - 
@@ -63,7 +63,7 @@
                         <p class="h6"><strong>Phone:</strong> <%= @candidate.phone_number %></p>
                     </div>
                 </div>
-                <div class="row ml-3">
+                <div class="row ml-3 mt-2">
                     <div class="col">
                         <% if !@candidate.date_of_birth.empty? %>
                             <p class="h6"><strong>Date of Birth:</strong> <%= @candidate.date_of_birth %></p>
@@ -75,7 +75,7 @@
                         <% end %>
                     </div>
                 </div>
-                <div class="row ml-3">
+                <div class="row ml-3 mt-2">
                     <div class="col">
                         <p class="h6"><strong>Affidavit Status:</strong> 
                             <% if @candidate.affidavit_received %>
@@ -97,7 +97,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row ml-3">
+                <div class="row ml-3 mt-2">
                     <div class="col">
                         <p class="h6"><strong>Test Status:</strong> 
                             <% if @candidate.test_passed %>
@@ -119,7 +119,7 @@
                         </p>
                     </div>
                 </div>
-                <div class="row ml-3">
+                <div class="row ml-3 mt-2">
                     <div class="col">
                         <p class="h6"><strong>Agent:</strong> 
                             <% if @candidate.agent_id != 1 %>
@@ -139,13 +139,9 @@
                         </p>
                     </div>
                 </div>
-                <div class="row mx-3">
+                <div class="row mx-3 mt-2">
                     <div class="col">
-                        <%= link_to edit_candidate_path do %>
-                            <button class="btn btn-primary btn-block">
-                                Edit Candidate
-                            </button>
-                        <% end %>
+                        <%= link_to "Edit Candidate", edit_candidate_path, :class => "btn btn-primary btn-block" %>
                     </div>
                     <div class="col">
                         <%= form_tag candidate_path(@candidate.id), method: "delete" do %>
@@ -153,7 +149,6 @@
                         <% end %>
                     </div>
                 </div>
-
             </p>
         </div>
     </div>
