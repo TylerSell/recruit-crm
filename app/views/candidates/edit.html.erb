@@ -1,1 +1,10 @@
-<%= render 'partials/candidate_form' %>
+<div class="col-6 offset-1 mt-5">
+    <div class="shadow card mb-5">
+        <h5 class="card-header text-center">Edit <%= @candidate.first_name %> <%= @candidate.last_name %></h5>
+        <div class="card-body">
+            <p class="card-text">
+                <%= render 'partials/candidate_form' %>
+            </p>
+        </div>
+    </div>
+</div>

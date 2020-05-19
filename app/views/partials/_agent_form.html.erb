@@ -34,5 +34,5 @@
         <%= f.password_field :password, :class => "form-control" %>
     </div>
     
-    <%= f.submit "Signup", :class => 'btn btn-primary btn-block text-decoration-none'%>
+    <%= f.submit @agent.persisted? ? "Update Agent" : "Create Agent", :class => 'btn btn-primary btn-block text-decoration-none' %>
 <% end %> 

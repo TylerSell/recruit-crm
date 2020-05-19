@@ -1,68 +1,160 @@
-<h1>Name: <%= @candidate.first_name %> <%= @candidate.last_name %></h1>
-<h3>Email: <%= @candidate.email %></h3>
-<h3>Phone: <%= @candidate.phone_number %></h3>
-<h3>Address: <%= @candidate.address_1 %></h3>
-<% if !@candidate.address_2.empty? %>
-    <h3>Address 2: <%= @candidate.address_2 %></h3>
-<% end %>
-<h3>City: <%= @candidate.city %></h3>
-<h3>State: <%= @candidate.state %></h3>
-<h3>Zip: <%= @candidate.zip_code %></h3>
-<% if !@candidate.date_of_birth.empty? %>
-    <h3>Date of Birth: <%= @candidate.date_of_birth %></h3>
-<% end %>
-<% if !@candidate.interview_date.empty? %>
-    <h3>Interview Date: <%= @candidate.interview_date %></h3>
-<% end %>
-<h3>Stage: <%= @candidate.stage %></h3>
-<h3>Affidavit Status: 
-    <% if @candidate.affidavit_received %>
-        Sent & Received
-    <% elsif @candidate.affidavit_sent %>
-        Sent but Not Received
-    <% else %>
-        Not Sent
-    <% end %>
-</h3>
-<h3>Voucher Status: 
-    <% if @candidate.voucher_sent %>
-        Voucher Sent
-    <% else %>
-        Not Sent
-    <% end %>
-</h3>
-<h3>Test Status: 
-    <% if @candidate.test_passed %>
-        Test Passed
-    <% elsif !@candidate.test_date.empty? %>
-        Test Scheduled on <%= @candidate.test_date %>
-    <% else %>
-        No Test Scheduled
-    <% end %>
-</h3>
-<h3>License Status: 
-    <% if @candidate.licensed %>
-        Licensed
-    <% else %>
-        Not Licensed Yet
-    <% end %>
-</h3>
-<% if @candidate.agent_id != 1 %>
-    <h3>Agent: <%= @agent.first_name %> <%= @agent.last_name %></h3>
-<% else %>
-    <h3>No Agent Assigned Yet</h3>
-<% end %>
-<% if @candidate.recruiter_id != 2 %>
-    <h3>Recruiter: <%= @recruiter.first_name %> <%= @recruiter.last_name %></h3>
-<% else %>
-    <h3>No Recruiter Assigned Yet</h3>
-<% end %>
+<div class="col-6 offset-1 mt-5">
+    <div class="shadow card mb-5">
+        <h5 class="card-header text-center"><%= @candidate.first_name %> <%= @candidate.last_name %></h5>
+        <div class="card-body">
+            <p class="card-text">
+                <div class="row ml-3">
+                    <div class="col">
+                        <p class="h6"><strong>Email:</strong> <%= @candidate.email %></p>
+                    </div>
+                    <div class="col">
+                        <p class="h6"><strong>Phone:</strong> <%= @candidate.phone_number %></p>
+                    </div>
+                </div>
+                <div class="row ml-3">
+                    <div class="col">
+                        <p class="h6"><strong>Address:</strong> <%= @candidate.address_1 %></p>
+                    </div>
+                    <div class="col">
+                        <% if !@candidate.address_2.empty? %>
+                            <p class="h6"><strong>Address 2:</strong> <%= @candidate.address_2 %></p>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="row ml-3">
+                    <div class="col">
+                        <p class="h6"><strong>City:</strong> <%= @candidate.city %></p>
+                    </div>
+                    <div class="col">
+                        <p class="h6"><strong>State:</strong> <%= @candidate.state %></p>
+                    </div>
+                    <div class="col">
+                        <p class="h6"><strong>Zip:</strong> <%= @candidate.zip_code %></p>
+                    </div>
+                </div>
+                <div class="row ml-3">
+                    <div class="col">
+                        <p class="h6">
+                            <strong>Stage:</strong> <%= @candidate.stage %> - 
+                            <% if @candidate.stage == '1' %>
+                                Interested
+                            <% elsif @candidate.stage == '2' %>
+                                Interview Set
+                            <% elsif @candidate.stage == '3' %>
+                                Affidavit Sent
+                            <% elsif @candidate.stage == '4' %>
+                                Voucher Sent
+                            <% elsif @candidate.stage == '5' %>
+                                Studying for Test
+                            <% elsif @candidate.stage == '6' %>
+                                Test Scheduled
+                            <% elsif @candidate.stage == '7' %>
+                                Sent to Contracting
+                            <% elsif @candidate.stage == '8' %>
+                                Hired/Contracting Complete
+                            <% elsif @candidate.stage == '9' %>
+                                Archived/Not Interested
+                            <% else @candidate.stage == '10' %>
+                                Archived/No Contact
+                            <% end %>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="h6"><strong>Phone:</strong> <%= @candidate.phone_number %></p>
+                    </div>
+                </div>
+                <div class="row ml-3">
+                    <div class="col">
+                        <% if !@candidate.date_of_birth.empty? %>
+                            <p class="h6"><strong>Date of Birth:</strong> <%= @candidate.date_of_birth %></p>
+                        <% end %>
+                    </div>
+                    <div class="col">
+                        <% if !@candidate.interview_date.empty? %>
+                            <p class="h6"><strong>Interview Date:</strong> <%= @candidate.interview_date %></p>
+                        <% end %>
+                    </div>
+                </div>
+                <div class="row ml-3">
+                    <div class="col">
+                        <p class="h6"><strong>Affidavit Status:</strong> 
+                            <% if @candidate.affidavit_received %>
+                                Sent & Received
+                            <% elsif @candidate.affidavit_sent %>
+                                Sent but Not Received
+                            <% else %>
+                                Not Sent
+                            <% end %>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="h6"><strong>Voucher Status:</strong> 
+                            <% if @candidate.voucher_sent %>
+                                Voucher Sent
+                            <% else %>
+                                Not Sent
+                            <% end %>
+                        </p>
+                    </div>
+                </div>
+                <div class="row ml-3">
+                    <div class="col">
+                        <p class="h6"><strong>Test Status:</strong> 
+                            <% if @candidate.test_passed %>
+                                Test Passed
+                            <% elsif !@candidate.test_date.empty? %>
+                                Test Scheduled on <%= @candidate.test_date %>
+                            <% else %>
+                                No Test Scheduled
+                            <% end %>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="h6"><strong>License Status:</strong> 
+                            <% if @candidate.licensed %>
+                                Licensed
+                            <% else %>
+                                Not Licensed Yet
+                            <% end %>
+                        </p>
+                    </div>
+                </div>
+                <div class="row ml-3">
+                    <div class="col">
+                        <p class="h6"><strong>Agent:</strong> 
+                            <% if @candidate.agent_id != 1 %>
+                                <%= @agent.first_name %> <%= @agent.last_name %>
+                            <% else %>
+                                Not Assigned
+                            <% end %>
+                        </p>
+                    </div>
+                    <div class="col">
+                        <p class="h6"><strong>Recruiter:</strong> 
+                            <% if @candidate.recruiter_id != 2 %>
+                                <%= @recruiter.first_name %> <%= @recruiter.last_name %>
+                            <% else %>
+                                Not Assigned
+                            <% end %>
+                        </p>
+                    </div>
+                </div>
+                <div class="row mx-3">
+                    <div class="col">
+                        <%= link_to edit_candidate_path do %>
+                            <button class="btn btn-primary btn-block">
+                                Edit Candidate
+                            </button>
+                        <% end %>
+                    </div>
+                    <div class="col">
+                        <%= form_tag candidate_path(@candidate.id), method: "delete" do %>
+                            <%= submit_tag "Delete #{@candidate.first_name} #{@candidate.last_name}", :class => "btn btn-danger btn-block" %>
+                        <% end %>
+                    </div>
+                </div>
 
-<%= link_to "All Candidates", candidates_path %><br><br>
-
-<%= link_to "Edit Candidate", edit_candidate_path %><br><br>
-
-<%= form_tag candidate_path(@candidate.id), method: "delete" do %>
-    <%= submit_tag "Delete #{@candidate.first_name} #{@candidate.last_name}" %>
-<% end %>
-
+            </p>
+        </div>
+    </div>
+</div>
