@@ -1,16 +1,39 @@
-<h1>Stage 5 - Studying for Test</h1>
-
-<div>
-    <% @candidates.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <strong>Updated on: </strong><%= candidate.updated_at.strftime("%b %d, %Y") %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <strong>Agent: </strong><%= candidate.agent.first_name %> <%= candidate.agent.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <strong>Recruiter: </strong><%= candidate.recruiter.first_name %> <%= candidate.recruiter.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+<div class="col-md-8 col-xl-9">
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-5 mb-5">
+                <h5 class="card-header"><strong class="text-primary">Stage 5:</strong> Studying for Test</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Agent</th>
+                                        <th>Recruiter</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= candidate.agent.first_name %> <%= candidate.agent.last_name %></td>
+                                        <td><%= candidate.recruiter.first_name %> <%= candidate.recruiter.last_name %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <% end %>
 </div>
