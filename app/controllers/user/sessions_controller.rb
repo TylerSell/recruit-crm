@@ -51,7 +51,7 @@ class User::SessionsController < ApplicationController
             else 
                 create_from_facebook
                 if @facebook_user.save
-                    session[:user_id] = facebook_user.id 
+                    session[:user_id] = @facebook_user.id 
                     redirect_to candidates_path
                 else
                     redirect_to root_path, alert: "Something went wrong please try again."

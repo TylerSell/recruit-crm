@@ -1,181 +1,337 @@
-<div class="col-md-7 col-xl-8 align-self-center">
-    <div class="shadow card">
-        <h5 class="card-header">Stage 1 - Interested</h5>
-        <div class="card-body">
-            <p class="card-text">
-                <ul>
-                    <% @agent.errors.full_messages.each do |msg| %>
-                        <li><%= msg %></li>
-                    <% end %>
-                </ul>
-            </p>
-            <%= link_to "Edit", edit_candidate_path(candidate), :class => "btn btn-warning" %>
-            <%= link_to "View", candidate_path(candidate), :class => "btn btn-info" %>
+<div class="col-md-8 col-xl-9">
+    <div class="row">
+        <p class="h2 ml-3 my-3">Dashboard</p>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card">
+                <h5 class="card-header">Stage 1 - Interested</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_1.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
         </div>
     </div>
-</div>
-
-<h1>Dashboard</h1>
-
-<div>
-    <div>
-        <h3></h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 2 - Interview Set</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Interview Date</th>
+                                        <th>Agent</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_2.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.interview_date %></td>
+                                        <td><%= candidate.agent.first_name %> <%= candidate.agent.last_name %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <% @candidates_1.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 3 - Affidavit Sent</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_3.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 2 - Interview Set</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 4 - Voucher Sent</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_4.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <% @candidates_2.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <strong>Interview Date: </strong><%= candidate.interview_date %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 5 - Studying for Test</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_5.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 3 - Affidavit Sent</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 6 - Test Scheduled</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Test Date</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_6.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.test_date %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <% @candidates_3.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <strong>Last Updated: </strong><%= candidate.updated_at.strftime("%b %d, %Y") %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 7 - Sent To Contracting</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_7.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 4 - Voucher Sent</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 8 - Hired and Contracting Complete</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_8.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <% @candidates_4.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3">
+                <h5 class="card-header">Stage 9 - Archived/Not Interested</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_9.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 5 - Studying for Test</h3>
+    <div class="row">
+        <div class="col-12">
+            <div class="shadow card mt-3 mb-5">
+                <h5 class="card-header">Stage 10 - Archived/No Contact</h5>
+                <div class="card-body">
+                    <p class="card-text">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Updated On</th>
+                                        <th>Edit</th>
+                                        <th>View</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <% @candidates_10.each do |candidate| %>
+                                    <tr>
+                                        <td><%= candidate.first_name %> <%= candidate.last_name %></td>
+                                        <td><%= candidate.updated_at.strftime("%b %d, %Y") %></td>
+                                        <td><%= link_to "Edit", edit_candidate_path(candidate), :class => "badge badge-pill badge-warning" %></td>
+                                        <td><%= link_to "View", candidate_path(candidate), :class => "badge badge-pill badge-info" %></td>
+                                    </tr>
+                                <% end %>
+                                </tbody>
+                            </table>
+                        </div>
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <% @candidates_5.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
-    </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 6 - Test Scheduled</h3>
-    </div>
-
-    <% @candidates_6.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <strong>Test Date: </strong><%= candidate.test_date %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
-    </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 7 - Sent To Contracting</h3>
-    </div>
-
-    <% @candidates_7.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
-    </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 8 - Hired and Contracting Complete</h3>
-    </div>
-
-    <% @candidates_8.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
-    </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 9 - Archived/Not Interested</h3>
-    </div>
-
-    <% @candidates_9.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
-    </div>
-    <% end %>
-</div>
-
-<div>
-    <div>
-        <h3>Stage 10 - Archived/No Contact</h3>
-    </div>
-
-    <% @candidates_10.each do |candidate| %>
-    <div>
-        <p>
-            <%= candidate.first_name %> <%= candidate.last_name %>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-            <%= link_to "Edit", edit_candidate_path(candidate) %>&nbsp; &nbsp; 
-            <%= link_to "View", candidate_path(candidate) %>
-        </p>
-    </div>
-    <% end %>
 </div>
