@@ -144,9 +144,7 @@
                         <%= link_to "Edit Candidate", edit_candidate_path, :class => "btn btn-primary btn-block" %>
                     </div>
                     <div class="col">
-                        <%= form_tag candidate_path(@candidate.id), method: "delete" do %>
-                            <%= submit_tag "Delete #{@candidate.first_name} #{@candidate.last_name}", :class => "btn btn-danger btn-block" %>
-                        <% end %>
+                        <%= button_to "Delete #{@candidate.first_name} #{@candidate.last_name}", candidate_path, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger btn-block" %>
                     </div>
                 </div>
             </p>
