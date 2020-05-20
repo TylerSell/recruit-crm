@@ -6,10 +6,10 @@
 require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
-require("channels").start()
-require("jquery3").start()
-require("popper").start()
-require("bootstrap").start()
+require("channels")
+
+import "bootstrap"
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
