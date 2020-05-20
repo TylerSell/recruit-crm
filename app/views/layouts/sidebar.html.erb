@@ -33,46 +33,46 @@
               <%= link_to "Logout", logout_path, :class => "btn btn-outline-info btn-sm" %>
             </div>
             <div class="container d-flex justify-content-start mt-3">
-              <h3 class="h4 text-light text-decoration-none">Dashboard</h3>
+              <h3 class="h4 text-light">Dashboard</h3>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Dashboard", candidates_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Dashboard", candidates_path, :class => current_page?(candidates_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "New Candidate", new_candidate_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "New Candidate", new_candidate_path, :class => current_page?(new_candidate_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start mt-3">
               <h3 class="h4 text-light text-decoration-none">Stages</h3>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 1", stage_1_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 1", stage_1_path, :class => current_page?(stage_1_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 2", stage_2_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 2", stage_2_path, :class => current_page?(stage_2_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 3", stage_3_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 3", stage_3_path, :class => current_page?(stage_3_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 4", stage_4_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 4", stage_4_path, :class => current_page?(stage_4_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 5", stage_5_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 5", stage_5_path, :class => current_page?(stage_5_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 6", stage_6_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 6", stage_6_path, :class => current_page?(stage_6_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 7", stage_7_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 7", stage_7_path, :class => current_page?(stage_7_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 8", stage_8_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 8", stage_8_path, :class => current_page?(stage_8_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Stage 9", stage_9_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 9", stage_9_path, :class => current_page?(stage_9_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
             <div class="container d-flex justify-content-start ml-3 pb-2">
-              <%= link_to "Stage 10", stage_10_path, :class => "h5 text-secondary text-decoration-none" %>
+              <%= link_to "Stage 10", stage_10_path, :class => current_page?(stage_10_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
             </div>
           </nav>
         </div>
