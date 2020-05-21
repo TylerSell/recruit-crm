@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'user/sessions#facebook'
 
   scope '/user' do 
-    resources :agents, only: [:new, :create, :show, :edit, :update]
-    resources :recruiters, only: [:new, :create, :show, :edit, :update]
+    resources :agents, only: [:new, :create, :show, :edit, :update] do
+    resources :recruiters, only: [:new, :create, :show, :edit, :update] do
   end 
 
   resources :candidates
