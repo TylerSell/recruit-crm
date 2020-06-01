@@ -18,10 +18,10 @@
       <span class="navbar-brand ml-auto mb-0 h1 text-primary">Insurance Recruiter CRM</span>
     </header>
     
-    <div class="container-fluid">
-      <div class="row flex-xl-nowrap">
-        <div class="col-md-4 col-xl-3 bg-dark">
-          <nav class="bg-dark mx-1">
+    <div class="container-fluid flex-grow-1">
+      <div class="row flex-xl-nowrap flex-grow-1">
+        <div class="col-md-4 col-xl-3 bg-dark flex-grow-1">
+          <nav class="bg-dark mx-1 flex-grow-1">
             <div class="container d-flex justify-content-center mt-2">
               <% if is_agent? %>
                 <%= link_to "#{current_user.first_name} #{current_user.last_name}", agent_path(current_user), :class => "h3 text-white text-decoration-none" %><br>
