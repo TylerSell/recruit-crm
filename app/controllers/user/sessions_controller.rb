@@ -28,8 +28,14 @@ class User::SessionsController < ApplicationController
 
 
         if @user && @user.authenticate(params[:password])
-            session[:user_id] = @user.id 
-            redirect_to candidates_path 
+            session[:user_id] = @user.id
+            # user = User.find_by(id: session[:user_id])
+            if is_agent?
+                redirect_to agent_candidates_path(session[:user_id])
+            else
+                redirect_to recruiter_candidates_path(session[:user_id])
+            end
+            # redirect_to candidates_path 
         else
             flash[:alert] = "Email or Password incorrect"
             render :new, :layout => "application"

@@ -25,10 +25,15 @@ Rails.application.routes.draw do
   get '/auth/facebook/callback' => 'user/sessions#facebook'
 
   scope '/user' do 
-    resources :agents, only: [:new, :create, :show, :edit, :update]
-    resources :recruiters, only: [:new, :create, :show, :edit, :update]
+    resources :agents, only: [:new, :create, :show, :edit, :update] do
+      resources :candidates, only: [:index, :new, :create]
+    end
+    resources :recruiters, only: [:new, :create, :show, :edit, :update] do
+      resources :candidates, only: [:index, :new, :create]
+    end
   end 
 
-  resources :candidates
+  resources :candidates, only: [:show, :edit, :update, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
 end

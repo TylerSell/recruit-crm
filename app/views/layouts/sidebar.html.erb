@@ -36,10 +36,18 @@
               <h3 class="h4 text-light">Dashboard</h3>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "Dashboard", candidates_path, :class => current_page?(candidates_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
+              <% if is_agent? %>
+                <%= link_to "Dashboard", agent_candidates_path(session[:user_id]), :class => current_page?(agent_candidates_path(session[:user_id])) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
+              <% else %>
+                <%= link_to "Dashboard", recruiter_candidates_path(session[:user_id]), :class => current_page?(recruiter_candidates_path(session[:user_id])) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
+              <% end %>
             </div>
             <div class="container d-flex justify-content-start ml-3">
-              <%= link_to "New Candidate", new_candidate_path, :class => current_page?(new_candidate_path) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
+            <% if is_agent? %>
+                <%= link_to "New Candidate", new_agent_candidate_path(session[:user_id]), :class => current_page?(new_agent_candidate_path(session[:user_id])) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
+              <% else %>
+                <%= link_to "New Candidate", new_recruiter_candidate_path(session[:user_id]), :class => current_page?(new_recruiter_candidate_path(session[:user_id])) ? "h5 text-info text-decoration-none" : "h5 text-secondary text-decoration-none" %>
+              <% end %>
             </div>
             <div class="container d-flex justify-content-start mt-3">
               <h3 class="h4 text-light text-decoration-none">Stages</h3>
